@@ -1,7 +1,12 @@
 {
     "openScenes" : [{
+    "name" : "",
+    "path" : "",
+    "opened" : 0,
+    "loaded" : 0
+}, {
     "name" : "Game",
-    "path" : "C:\Users\2013b\Git\PewPewExplosion\bin\Debug\assets\Scenes\Game.json",
+    "path" : "C:\Users\2013b\Git\GGJ2021\bin\Debug\assets\Scenes\Game.json",
     "opened" : 1,
     "loaded" : 1
 }],
