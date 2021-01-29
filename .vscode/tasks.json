@@ -1,0 +1,110 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Generate Makefile",
+			"command": "./cbp2make.exe",
+			"args": [
+				"-in",
+				"Project.cbp",
+				"-out",
+				"makefile.mak"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "Make All",
+			"command": "C:\\msys64\\mingw64\\bin\\mingw32-make.exe",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": "Generate Makefile"
+		},
+		{
+			"type": "shell",
+			"label": "Make Editor (Debug)",
+			"command": "C:\\msys64\\mingw64\\bin\\mingw32-make.exe",
+			"args": [
+				"debug__editor_",
+				"-j",
+				"8"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"dependsOn": "Generate Makefile"
+		},
+		{
+			"type": "shell",
+			"label": "Make Standalone (Debug)",
+			"command": "C:\\msys64\\mingw64\\bin\\mingw32-make.exe",
+			"args": [
+				"debug",
+				"-j",
+				"8"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"dependsOn": "Generate Makefile"
+		},
+		{
+			"type": "shell",
+			"label": "Make Standalone (Release)",
+			"command": "C:\\msys64\\mingw64\\bin\\mingw32-make.exe",
+			"args": [
+				"release",
+				"-j",
+				"8"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"dependsOn": "Generate Makefile"
+		},
+		{
+			"type": "shell",
+			"label": "Clean Project",
+			"command": "rm",
+			"args": [
+				"-r",
+				"-Force",
+				"obj"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
