@@ -2,11 +2,10 @@
 #define GameController_H
 
 #include <Ossium.h>
-#include "explorer.h"
 
 using namespace Ossium;
 
-class MissionOverview;
+class Explorer;
 
 /// The "hub" class that game-specific bits can access everything via.
 class GameController : public Component
@@ -30,7 +29,10 @@ public:
     // Player money
     int funds = 200;
 
+    Text* fundsText = nullptr;
+
     Explorer* menuExplorers[3];
+    Text* hireCosts[3];
 
     Explorer* hiredExplorer = nullptr;
 

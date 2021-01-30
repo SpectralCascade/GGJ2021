@@ -1,5 +1,7 @@
 #include "explorer.h"
 
+REGISTER_COMPONENT(Explorer);
+
 void Explorer::OnLoadFinish()
 {
     hat = entity->FindAndGetComponent<Texture>("Hat", entity);
@@ -10,7 +12,9 @@ void Explorer::OnLoadFinish()
     luckText = entity->FindAndGetComponent<Text>("Luck", entity);
     speedText = entity->FindAndGetComponent<Text>("Speed", entity);
 
+#ifndef OSSIUM_EDITOR
     UpdateAppearance();
+#endif
 
 }
 
@@ -22,17 +26,17 @@ void Explorer::UpdateAppearance()
 
     if (face != nullptr)
     {
-        face->SetSource(resources->Get<Image>(renderer, hatPath));
+        face->SetSource(resources->Get<Image>(facePath, *renderer));
     }
 
     if (hat != nullptr)
     {
-        hat->SetSource(resources->Get<Image>(renderer, hatPath));
+        hat->SetSource(resources->Get<Image>(hatPath, *renderer));
     }
 
     if (stache != nullptr)
     {
-        stache->SetSource(resources->Get<Image>(renderer, stachePath));
+        stache->SetSource(resources->Get<Image>(stachePath, *renderer));
     }
 
     // Update stats text

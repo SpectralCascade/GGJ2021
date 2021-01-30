@@ -15,9 +15,9 @@ struct ExplorerMetaSchema : public Schema<ExplorerMetaSchema, 20>
 
     M(float, speed) = 1.0f;
 
-    M(int, energy) = 3;
-
     M(float, luck) = 0;
+
+    M(unsigned int, cost) = 0;
 
     M(std::string, hatPath) = "assets/Sprites/hat.png";
 
@@ -30,6 +30,8 @@ struct ExplorerMetaSchema : public Schema<ExplorerMetaSchema, 20>
 struct ExplorerSchema : public ExplorerMetaSchema
 {
     DECLARE_SCHEMA(ExplorerSchema, ExplorerMetaSchema);
+
+    M(int, energy) = 3;
 
 };
 

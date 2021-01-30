@@ -109,6 +109,8 @@
 			<Add directory="C:/SDL2/SDL2_mixer-2.0.4/x86_64-w64-mingw32/lib" />
 			<Add directory="C:/SDL2/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="src/Ingame/explorer.cpp" />
+		<Unit filename="src/Ingame/explorer.h" />
 		<Unit filename="src/Ingame/GameController.cpp" />
 		<Unit filename="src/Ingame/GameController.h" />
 		<Unit filename="src/Ingame/UI/PlacementButton.cpp" />
