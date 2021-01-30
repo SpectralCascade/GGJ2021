@@ -2,6 +2,7 @@
 #define GameController_H
 
 #include <Ossium.h>
+#include "explorer.h"
 
 using namespace Ossium;
 
@@ -16,11 +17,29 @@ public:
     // Initialise schemas
     void OnCreate();
 
+    void OnDestroy();
+
     // Setup the game scene.
     void OnLoadFinish();
 
+    // Generates the explorer characters.
+    void GenerateExplorers();
+
+    Rand* rng = nullptr;
+
     // Player money
     int funds = 200;
+
+    Explorer* menuExplorers[3];
+
+    Explorer* hiredExplorer = nullptr;
+
+    Button* exploreButton = nullptr;
+
+    AudioMixer* mixer = nullptr;
+    AudioBus* master = nullptr;
+
+    AudioPlayer* footsteps = nullptr;
 
 };
 

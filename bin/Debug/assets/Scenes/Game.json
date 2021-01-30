@@ -6,6 +6,9 @@
         "Components" : {
             "InputGUI" : [{
             "enabled" : 1
+        }],
+            "GameController" : [{
+            "enabled" : 1
         }]
         }
     },
@@ -34,14 +37,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(552.5, 470.5)",
+            "position" : "(585.5, 470.5)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1105,
+            "width" : 1171,
             "height" : 941,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -86,7 +89,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1082.9, 922.18)",
+            "bounds" : "(1147.58, 922.18)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -97,7 +100,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(11.05, 9.41)",
+            "position" : "(11.71, 9.41)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -119,7 +122,7 @@
         "Components" : {
             "Texture" : [{
             "enabled" : 1,
-            "width" : 663,
+            "width" : 702.6,
             "height" : 470.5,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -133,7 +136,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(663, 423.45)",
+            "position" : "(702.6, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -148,30 +151,73 @@
         }]
         }
     },
-    "8" : {
-        "Name" : "ExploreButton",
+    "19" : {
+        "Name" : "BottomBar",
         "Active" : 1,
         "Parent" : 3,
         "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.02, 0.75)",
+            "anchorMax" : "(0.98, 0.98)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(911.625, 846.9)",
+            "position" : "(585.5, 813.965)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 1124.16,
+            "height" : 216.43,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/UI/Buttons/button.png",
+            "clip" : "(0, 0, 33, 33)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(200, 100, 80, 200)",
+            "blending" : 1,
+            "fitLayout" : 3,
+            "stretchArea" : "(11, 11, 1, 1)"
+        }]
+        }
+    },
+    "11" : {
+        "Name" : "Faces",
+        "Active" : 1,
+        "Parent" : 6,
+        "Components" : {
+        }
+    },
+    "8" : {
+        "Name" : "ExploreButton",
+        "Active" : 1,
+        "Parent" : 19,
+        "Components" : {
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(950.852, 813.965)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "BoxLayout" : [{
             "enabled" : 1,
-            "anchorMin" : "(0.7, 0.85)",
-            "anchorMax" : "(0.95, 0.95)",
+            "anchorMin" : "(0.7, 0.25)",
+            "anchorMax" : "(0.95, 0.75)",
             "origin" : "(0.5, 0.5)",
             "paddingMin" : "(0, 0)",
             "paddingMax" : "(0, 0)"
         }],
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 276.25,
-            "height" : 94.1,
+            "width" : 281.04,
+            "height" : 108.215,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
             "clip" : "(0, 0, 33, 33)",
@@ -191,6 +237,92 @@
         }]
         }
     },
+    "27" : {
+        "Name" : "Funds",
+        "Active" : 1,
+        "Parent" : 19,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.02, 0.4)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(45.9032, 792.322)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Funds: ${0}",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(255, 255, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 48,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 0,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(1079.19, 43.286)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "12" : {
+        "Name" : 1,
+        "Active" : 1,
+        "Parent" : 11,
+        "Components" : {
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 141.15,
+            "height" : 141.15,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/placeholderface.png",
+            "clip" : "(0, 0, 64, 64)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 305.825)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0.1)",
+            "anchorMax" : "(0.33, 0.4)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
     "9" : {
         "Name" : "Entity[9]",
         "Active" : 1,
@@ -206,7 +338,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(911.625, 828.08)",
+            "position" : "(950.852, 792.322)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -230,7 +362,414 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(0, 37.64)",
+            "bounds" : "(0, 43.286)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "15" : {
+        "Name" : "Name",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, -0.2)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 207.02)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Harold",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(0, 197.61)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "17" : {
+        "Name" : "Stache",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 305.825)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 141.15,
+            "height" : 141.15,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/stache.png",
+            "clip" : "(0, 0, 64, 64)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }]
+        }
+    },
+    "18" : {
+        "Name" : "Hat",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 305.825)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 141.15,
+            "height" : 141.15,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/hat.png",
+            "clip" : "(0, 0, 64, 64)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }]
+        }
+    },
+    "28" : {
+        "Name" : "Resilience",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Resilience: {0}",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 0,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(0, -141.15)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 376.4)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 1)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
+    "29" : {
+        "Name" : "Speed",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 1.3)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 418.745)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Speed: {0}",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 0,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(0, -225.84)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "30" : {
+        "Name" : "Luck",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Luck: {0}",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 0,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(0, -310.53)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 461.09)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 1.6)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
+    "31" : {
+        "Name" : "HireButton",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "StateSprite" : [{
+            "enabled" : 1,
+            "width" : 185.486,
+            "height" : 91.7475,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/UI/Buttons/button.png",
+            "clip" : "(0, 0, 33, 33)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(0, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 3,
+            "stretchArea" : "(11, 11, 1, 1)",
+            "currentState" : "",
+            "currentSubState" : 0,
+            "horizontalFlag" : 1,
+            "totalCurrentSegments" : 3
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 591.654)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.1, 0.25)",
+            "anchorMax" : "(0.9, 0.9)",
+            "origin" : "(0.5, 3.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Button" : [{
+            "enabled" : 1
+        }]
+        }
+    },
+    "33" : {
+        "Name" : "Cost",
+        "Active" : 1,
+        "Parent" : 12,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 1.9)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(467.229, 503.435)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Cost: ${0}",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(255, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 0,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(0, -395.22)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "32" : {
+        "Name" : "HireText",
+        "Active" : 1,
+        "Parent" : 31,
+        "Components" : {
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(0, -10)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 1
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Hire!",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(0, 0)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
