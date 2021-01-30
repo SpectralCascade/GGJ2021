@@ -29,7 +29,7 @@ void Terrain::Update()
     {
         // Fade in
         delta = game->clock.GetDeltaTime();
-        tex->SetAlphaMod((Uint8)Utilities::Clamp((int)tex->GetMod().a + 5, 0, 255));
+        tex->SetAlphaMod((Uint8)Utilities::Clamp((int)tex->GetMod().a + 4, 0, 255));
     }
 }
 
@@ -42,6 +42,7 @@ void Terrain::Discover()
 
     auto resources = entity->GetService<ResourceController>();
     auto renderer = entity->GetService<Renderer>();
+    tex->SetAlphaMod(0);
 
     discovered = true;
     if (tex != nullptr)
