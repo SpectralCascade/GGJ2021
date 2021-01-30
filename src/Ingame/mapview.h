@@ -62,6 +62,7 @@ public:
 
     // Start in upper left corner
     int explorerZone[2] = {0, 0};
+    int previousZone[2] = {0, 0};
 
     int discovered = 0;
 

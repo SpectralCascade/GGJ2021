@@ -155,18 +155,32 @@ void MapView::SpawnExplorer(Explorer* explorer)
     }
 
     // Spawn hired explorer
-    hiredExplorer = explorer->GetEntity()->Clone(explorerParent)->GetComponent<Explorer>();
-    hiredExplorer->GetEntity()->GetComponent<BoxLayout>()->Destroy();
+    Entity* spawned = explorerParent->CreateChild();
+    hiredExplorer = spawned->AddComponentOnce<Explorer>();
+    hiredExplorer->FromString(explorer->ToString());
 
     auto resources = entity->GetService<ResourceController>();
     auto renderer = entity->GetService<Renderer>();
 
-    hiredExplorer->hat = hiredExplorer->GetEntity()->CreateChild()->AddComponentOnce<Texture>();
-    hiredExplorer->stache = hiredExplorer->GetEntity()->CreateChild()->AddComponentOnce<Texture>();
-    hiredExplorer->face = hiredExplorer->GetEntity()->AddComponentOnce<Texture>();
-    hiredExplorer->hat->SetSource(resources->Get<Image>(hiredExplorer->hatPath, *renderer), true);
-    hiredExplorer->stache->SetSource(resources->Get<Image>(hiredExplorer->stachePath, *renderer), true);
+    spawned->AddComponentOnce<Transform>();
+    hiredExplorer->face = spawned->AddComponentOnce<Texture>();
+    hiredExplorer->face->OnLoadFinish();
     hiredExplorer->face->SetSource(resources->Get<Image>(hiredExplorer->facePath, *renderer), true);
+    //hiredExplorer->face->SetRenderWidth(0.5f);
+    //hiredExplorer->face->SetRenderHeight(0.5f);
+
+    auto hat = hiredExplorer->GetEntity()->CreateChild();
+    hat->AddComponentOnce<Transform>();
+    hiredExplorer->hat = hat->AddComponentOnce<Texture>();
+    hiredExplorer->hat->OnLoadFinish();
+    hiredExplorer->hat->SetSource(resources->Get<Image>(hiredExplorer->hatPath, *renderer), true);
+
+    auto stache = hiredExplorer->GetEntity()->CreateChild();
+    stache->AddComponentOnce<Transform>();
+    hiredExplorer->stache = stache->AddComponentOnce<Texture>();
+    hiredExplorer->stache->OnLoadFinish();
+    hiredExplorer->stache->SetSource(resources->Get<Image>(hiredExplorer->stachePath, *renderer), true);
+
     hiredExplorer->resText = entity->FindAndGetComponent<Text>("Health");
     hiredExplorer->luckText = nullptr;
     hiredExplorer->speedText = nullptr;
@@ -199,13 +213,45 @@ void MapView::UpdateText()
 
 void MapView::Update()
 {
-    if (moveTimer.IsStarted())
+    if (moveTimer.IsStarted() && hiredExplorer != nullptr)
     {
         float seconds = (float)moveTimer.GetTicks() / 1000.0f;
-        if (seconds > 3)
+        
+        if ((seconds >= 0.33f && oldTime < 0.33f) || (seconds >= 0.66f && oldTime < 0.66f) || (seconds >= 1.0f && oldTime < 1.0f))
         {
+            auto resources = entity->GetService<ResourceController>();
+            string filename;
+            int footnumber = gc->rng->Int(0, 5) + 1;
+
+            switch (hiredExplorer->tier)
+            {
+            case 0:
+                filename = "Light";
+                break;
+            case 1:
+                filename = "Medium";
+                break;
+            case 2:
+                filename = "Heavy";
+                break;
+            }
+
+            gc->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/Footsteps/FS_{0}0{1}.wav", filename, footnumber)));
         }
-        oldTime = seconds;
+        if (seconds > 1.0f)
+        {
+            // Finished moving
+            hiredExplorer->GetTransform()->SetWorldPosition(grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition());            
+            moveTimer.Stop();
+            oldTime = 0;
+        }
+        else
+        {
+            Vector2 target = grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition();
+            Vector2 origin = grid->GetCellElement(previousZone[0], previousZone[1])->GetTransform()->GetWorldPosition();
+            hiredExplorer->GetTransform()->SetWorldPosition(origin.Lerp(target, seconds / 1.0f));
+            oldTime = seconds;
+        }
     }
     else
     {
@@ -224,7 +270,8 @@ void MapView::SelectCell(int i, int j)
             // Move explorer
             // TODO: lerp!
             moveTimer.Start();
-            hiredExplorer->GetTransform()->SetWorldPosition(grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition());
+            previousZone[0] = explorerZone[0];
+            previousZone[1] = explorerZone[1];
             explorerZone[0] = i;
             explorerZone[1] = j;
         }

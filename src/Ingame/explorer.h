@@ -19,6 +19,8 @@ struct ExplorerMetaSchema : public Schema<ExplorerMetaSchema, 20>
 
     M(unsigned int, cost) = 0;
 
+    M(int, tier) = 0;
+
     M(std::string, hatPath) = "assets/Sprites/hat.png";
 
     M(std::string, facePath) = "assets/Sprites/placeholderface.png";
