@@ -18,8 +18,18 @@ void MapView::OnLoadFinish()
 
     gc = entity->FindAndGetComponent<GameController>("Root");
 
+    fundsText = entity->FindAndGetComponent<Text>("FundsText");
+    progressText = entity->FindAndGetComponent<Text>("MapCompletion");
+
+    explorerParent = entity->Find("ExplorerParent");
+
+    moveTimer.Stop();
+
 #ifndef OSSIUM_EDITOR
+    UpdateText();
     GenerateMap();
+    // TODO: remove me, should only spawn on map load from hiring menu
+    SpawnExplorer(entity->FindAndGetComponent<Explorer>("1"));
 #endif
 
 }
@@ -131,12 +141,122 @@ void MapView::Render(Renderer& renderer)
     }
 }
 
+void MapView::SpawnExplorer(Explorer* explorer)
+{
+    // TODO: randomise spawn zone?
+    explorerZone[0] = 0;
+    explorerZone[1] = 0;
+
+    // Destroy old explorer
+    if (hiredExplorer != nullptr)
+    {
+        hiredExplorer->GetEntity()->Destroy();
+        hiredExplorer = nullptr;
+    }
+
+    // Spawn hired explorer
+    hiredExplorer = explorer->GetEntity()->Clone(explorerParent)->GetComponent<Explorer>();
+    hiredExplorer->GetEntity()->GetComponent<BoxLayout>()->Destroy();
+
+    auto resources = entity->GetService<ResourceController>();
+    auto renderer = entity->GetService<Renderer>();
+
+    hiredExplorer->hat = hiredExplorer->GetEntity()->CreateChild()->AddComponentOnce<Texture>();
+    hiredExplorer->stache = hiredExplorer->GetEntity()->CreateChild()->AddComponentOnce<Texture>();
+    hiredExplorer->face = hiredExplorer->GetEntity()->AddComponentOnce<Texture>();
+    hiredExplorer->hat->SetSource(resources->Get<Image>(hiredExplorer->hatPath, *renderer), true);
+    hiredExplorer->stache->SetSource(resources->Get<Image>(hiredExplorer->stachePath, *renderer), true);
+    hiredExplorer->face->SetSource(resources->Get<Image>(hiredExplorer->facePath, *renderer), true);
+    hiredExplorer->resText = entity->FindAndGetComponent<Text>("Health");
+    hiredExplorer->luckText = nullptr;
+    hiredExplorer->speedText = nullptr;
+
+    // Update appearance
+    hiredExplorer->UpdateAppearance();
+    
+    hiredExplorer->GetTransform()->SetWorldPosition(grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition());
+    hiredExplorer->GetEntity()->SetActive(true);
+
+    zones[explorerZone[0]][explorerZone[1]]->GetComponent<Terrain>()->Discover();
+    TryMoveToZone(explorerZone[0], explorerZone[1]);
+}
+
+void MapView::UpdateText()
+{
+    if (gc != nullptr)
+    {
+        if (fundsText != nullptr)
+        {
+            fundsText->text = Utilities::Format("Funds: ${0}", gc->funds);
+            fundsText->dirty = true;
+        }
+        if (progressText != nullptr)
+        {
+            progressText->text = Utilities::Format("Map Progress: {0}%", (int)(100.0f * ((float)discovered / (float)(grid->rows * grid->cols))));
+        }
+    }
+}
+
+void MapView::Update()
+{
+    if (moveTimer.IsStarted())
+    {
+        float seconds = (float)moveTimer.GetTicks() / 1000.0f;
+        if (seconds > 3)
+        {
+        }
+        oldTime = seconds;
+    }
+    else
+    {
+        oldTime = 0;
+    }
+}
+
 void MapView::SelectCell(int i, int j)
 {
     selectedX = (int)i;
     selectedY = (int)j;
     if (i >= 0 && j >= 0)
     {
-        zones[i][j]->GetComponent<Terrain>()->Discover();
+        if (TryMoveToZone(i, j) != nullptr)
+        {
+            // Move explorer
+            // TODO: lerp!
+            moveTimer.Start();
+            hiredExplorer->GetTransform()->SetWorldPosition(grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition());
+            explorerZone[0] = i;
+            explorerZone[1] = j;
+        }
+    }
+}
+
+Terrain* MapView::TryMoveToZone(int i, int j)
+{
+    Terrain* zone = zones[i][j]->GetComponent<Terrain>();
+    if (!zone->IsDiscovered())
+    {
+        return nullptr;
+    }
+    else
+    {
+        // Explore surrounding zones
+        if (i - 1 >= 0)
+        {
+            zones[i - 1][j]->GetComponent<Terrain>()->Discover();
+        }
+        if (i + 1 < (int)grid->cols)
+        {
+            zones[i + 1][j]->GetComponent<Terrain>()->Discover();
+        }
+        if (j - 1 >= 0)
+        {
+            zones[i][j - 1]->GetComponent<Terrain>()->Discover();
+        }
+        if (j + 1 < (int)grid->rows)
+        {
+            zones[i][j + 1]->GetComponent<Terrain>()->Discover();
+        }
+        return zone;
     }
 }

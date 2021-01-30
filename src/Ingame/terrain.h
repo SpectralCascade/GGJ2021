@@ -36,7 +36,7 @@ public:
     void Discover();
 
     bool IsDiscovered();
-
+    
     void Update();
 
 private:

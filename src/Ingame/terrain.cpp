@@ -1,5 +1,6 @@
 #include "terrain.h"
 #include "GameController.h"
+#include "mapview.h"
 
 REGISTER_COMPONENT(Terrain);
 
@@ -66,6 +67,11 @@ void Terrain::Discover()
             break;
         }
     }
+
+    // Update counter
+    game->mapView->discovered++;
+    game->mapView->UpdateText();
+
 }
 
 bool Terrain::IsDiscovered()

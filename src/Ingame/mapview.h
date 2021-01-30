@@ -6,6 +6,7 @@
 using namespace Ossium;
 
 class Explorer;
+class Terrain;
 
 struct MapViewSchema : public Schema<MapViewSchema, 20>
 {
@@ -29,9 +30,20 @@ public:
 
     void ClearMap();
 
+    void SpawnExplorer(Explorer* explorer);
+
+    Terrain* TryMoveToZone(int i, int j);
+
     void Render(Renderer& renderer);
 
     void SelectCell(int i, int j);
+
+    void UpdateText();
+
+    void Update();
+
+    Timer moveTimer;
+    float oldTime = 0;
 
     GridLayout* grid = nullptr;
     BoxLayout* box = nullptr;
@@ -42,7 +54,16 @@ public:
     // Array of all zones in the grid.
     std::vector<std::vector<Entity*>> zones;
 
+    Entity* explorerParent = nullptr;
     Explorer* hiredExplorer = nullptr;
+
+    Text* fundsText = nullptr;
+    Text* progressText = nullptr;
+
+    // Start in upper left corner
+    int explorerZone[2] = {0, 0};
+
+    int discovered = 0;
 
     GameController* gc = nullptr;
 

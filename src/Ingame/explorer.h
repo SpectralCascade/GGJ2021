@@ -52,7 +52,7 @@ public:
     Text* resText = nullptr;
     Text* speedText = nullptr;
     Text* luckText = nullptr;
-    
+
 };
 
 
