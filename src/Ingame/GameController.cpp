@@ -1,5 +1,6 @@
 #include "GameController.h"
 #include "explorer.h"
+#include "mapview.h"
 
 REGISTER_COMPONENT(GameController);
 
@@ -20,8 +21,12 @@ void GameController::OnDestroy()
 
 void GameController::OnLoadFinish()
 {
+    entity->GetService<Renderer>()->SetBackgroundColor(Color(150, 64, 0));
+
     exploreButton = entity->FindAndGetComponent<Button>("ExploreButton");
 #ifndef OSSIUM_EDITOR
+    mapView = entity->FindAndGetComponent<MapView>("MapView");
+
     if (exploreButton != nullptr)
     {
         exploreButton->OnClicked += [this] (auto& caller) {
@@ -52,6 +57,7 @@ void GameController::OnLoadFinish()
         fundsText->text = Utilities::Format("Funds: ${0}", funds);
         fundsText->dirty = true;
     }
+
 #endif
 }
 
@@ -60,17 +66,17 @@ void GameController::GenerateExplorers()
     if (menuExplorers[0] != nullptr)
     {
         // tier 1
-        menuExplorers[0]->luck = rng->Float(0.0f, 0.04f);
+        menuExplorers[0]->luck = (float)rng->Int(0, 4) * 0.01f;
     }
     if (menuExplorers[1] != nullptr)
     {
         // tier 2
-        menuExplorers[1]->luck = rng->Float(0.02f, 0.07f);
+        menuExplorers[1]->luck = (float)rng->Int(2, 7) * 0.01f;
     }
     if (menuExplorers[2] != nullptr)
     {
         // tier 3
-        menuExplorers[2]->luck = rng->Float(0.06f, 0.1f);
+        menuExplorers[2]->luck = (float)rng->Int(6, 10) * 0.01f;
     }
 
     // Applies to all

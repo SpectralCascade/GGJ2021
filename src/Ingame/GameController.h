@@ -6,6 +6,7 @@
 using namespace Ossium;
 
 class Explorer;
+class MapView;
 
 /// The "hub" class that game-specific bits can access everything via.
 class GameController : public Component
@@ -29,12 +30,12 @@ public:
     // Player money
     int funds = 200;
 
+    MapView* mapView = nullptr;
+
     Text* fundsText = nullptr;
 
     Explorer* menuExplorers[3];
     Text* hireCosts[3];
-
-    Explorer* hiredExplorer = nullptr;
 
     Button* exploreButton = nullptr;
 

@@ -111,6 +111,8 @@
 		</Linker>
 		<Unit filename="src/Ingame/explorer.cpp" />
 		<Unit filename="src/Ingame/explorer.h" />
+		<Unit filename="src/Ingame/mapview.cpp" />
+		<Unit filename="src/Ingame/mapview.h" />
 		<Unit filename="src/Ingame/GameController.cpp" />
 		<Unit filename="src/Ingame/GameController.h" />
 		<Unit filename="src/Ingame/UI/PlacementButton.cpp" />

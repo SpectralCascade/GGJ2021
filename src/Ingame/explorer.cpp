@@ -52,7 +52,7 @@ void Explorer::UpdateAppearance()
     }
     if (luckText != nullptr)
     {
-        luckText->text = Utilities::Format("Luck: {0}", luck);
+        luckText->text = Utilities::Format("Luck: {0}%", (int)(luck * 100.0f));
         luckText->dirty = true;
     }
 }
