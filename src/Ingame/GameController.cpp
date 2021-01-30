@@ -61,6 +61,13 @@ void GameController::OnLoadFinish()
 #endif
 }
 
+void GameController::Update()
+{
+    Uint32 nowTime = gameTimer.GetTicks();
+    clock.Update((float)(nowTime - oldTime) / 1000.0f);
+    oldTime = nowTime;
+}
+
 void GameController::GenerateExplorers()
 {
     if (menuExplorers[0] != nullptr)

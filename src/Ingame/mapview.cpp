@@ -2,6 +2,7 @@
 #include "explorer.h"
 #include "UI/PlacementButton.h"
 #include "GameController.h"
+#include "terrain.h"
 
 using namespace std;
 
@@ -17,15 +18,19 @@ void MapView::OnLoadFinish()
 
     gc = entity->FindAndGetComponent<GameController>("Root");
 
+#ifndef OSSIUM_EDITOR
+    GenerateMap();
+#endif
+
 }
 
 void MapView::ClearMap()
 {
-    for (unsigned int i = 0, counti = grid->cols; i < counti; i++)
+    for (unsigned int i = 0, counti = zones.size(); i < counti; i++)
     {
-        for (unsigned int j = 0, countj = grid->rows; j < countj; j++)
+        for (unsigned int j = 0, countj = zones[i].size(); j < countj; j++)
         {
-            zones[i][j]->GetComponent<Texture>()->SetSource(nullptr);
+            zones[i][j]->AddComponentOnce<Texture>()->SetSource(nullptr);
         }
     }
     zones.clear();
@@ -46,7 +51,28 @@ void MapView::GenerateMap()
 
             // Randomly generate the terrain type
             Terrain* terrain = zones[i][j]->AddComponentOnce<Terrain>();
-            terrain->terrain = ;
+            float terrainChance = gc->rng->Float();
+            if (terrainChance < 0.35f)
+            {
+                terrain->terrain = TERRAIN_PLAIN;
+            }
+            else if (terrainChance < 0.55f)
+            {
+                terrain->terrain = TERRAIN_FOREST;
+            }
+            else if (terrainChance < 0.75f)
+            {
+                terrain->terrain = TERRAIN_HILL;
+            }
+            else if (terrainChance < 0.95f)
+            {
+                terrain->terrain = TERRAIN_MOUNTAIN;
+            }
+            else
+            {
+                terrain->terrain = TERRAIN_LAKE;
+            }
+            terrain->Init(gc);
 
             PlacementButton* dragButton = cell->GetEntity()->AddComponentOnce<PlacementButton>();
             dragButton->OnLoadFinish();
@@ -109,4 +135,8 @@ void MapView::SelectCell(int i, int j)
 {
     selectedX = (int)i;
     selectedY = (int)j;
+    if (i >= 0 && j >= 0)
+    {
+        zones[i][j]->GetComponent<Terrain>()->Discover();
+    }
 }

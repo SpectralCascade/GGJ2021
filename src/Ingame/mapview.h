@@ -42,8 +42,6 @@ public:
     // Array of all zones in the grid.
     std::vector<std::vector<Entity*>> zones;
 
-    int targetZone[2];
-
     Explorer* hiredExplorer = nullptr;
 
     GameController* gc = nullptr;

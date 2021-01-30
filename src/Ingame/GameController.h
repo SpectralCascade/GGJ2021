@@ -25,6 +25,13 @@ public:
     // Generates the explorer characters.
     void GenerateExplorers();
 
+    // Update clock
+    void Update();
+
+    Clock clock;
+    Timer gameTimer;
+    Uint32 oldTime = 0;
+
     Rand* rng = nullptr;
 
     // Player money

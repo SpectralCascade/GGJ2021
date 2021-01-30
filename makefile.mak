@@ -51,11 +51,11 @@ OBJDIR_DEBUG__EDITOR_ = obj\\DebugEditor
 DEP_DEBUG__EDITOR_ = 
 OUT_DEBUG__EDITOR_ = bin\\Debug\\OssiumEditor.exe
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG)\\src\\main.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG)\\src\\Ingame\\terrain.o $(OBJDIR_DEBUG)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG)\\src\\main.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o $(OBJDIR_RELEASE)\\src\\Ingame\\mapview.o $(OBJDIR_RELEASE)\\src\\Ingame\\GameController.o $(OBJDIR_RELEASE)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_RELEASE)\\src\\main.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o $(OBJDIR_RELEASE)\\src\\Ingame\\mapview.o $(OBJDIR_RELEASE)\\src\\Ingame\\terrain.o $(OBJDIR_RELEASE)\\src\\Ingame\\GameController.o $(OBJDIR_RELEASE)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_RELEASE)\\src\\main.o
 
-OBJ_DEBUG__EDITOR_ = $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG__EDITOR_)\\src\\main.o
+OBJ_DEBUG__EDITOR_ = $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\terrain.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG__EDITOR_)\\src\\main.o
 
 all: debug release debug__editor_
 
@@ -79,6 +79,9 @@ $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o: src\\Ingame\\explorer.cpp
 
 $(OBJDIR_DEBUG)\\src\\Ingame\\mapview.o: src\\Ingame\\mapview.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\Ingame\\mapview.cpp -o $(OBJDIR_DEBUG)\\src\\Ingame\\mapview.o
+
+$(OBJDIR_DEBUG)\\src\\Ingame\\terrain.o: src\\Ingame\\terrain.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\Ingame\\terrain.cpp -o $(OBJDIR_DEBUG)\\src\\Ingame\\terrain.o
 
 $(OBJDIR_DEBUG)\\src\\Ingame\\GameController.o: src\\Ingame\\GameController.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\Ingame\\GameController.cpp -o $(OBJDIR_DEBUG)\\src\\Ingame\\GameController.o
@@ -115,6 +118,9 @@ $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o: src\\Ingame\\explorer.cpp
 $(OBJDIR_RELEASE)\\src\\Ingame\\mapview.o: src\\Ingame\\mapview.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\Ingame\\mapview.cpp -o $(OBJDIR_RELEASE)\\src\\Ingame\\mapview.o
 
+$(OBJDIR_RELEASE)\\src\\Ingame\\terrain.o: src\\Ingame\\terrain.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\Ingame\\terrain.cpp -o $(OBJDIR_RELEASE)\\src\\Ingame\\terrain.o
+
 $(OBJDIR_RELEASE)\\src\\Ingame\\GameController.o: src\\Ingame\\GameController.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\Ingame\\GameController.cpp -o $(OBJDIR_RELEASE)\\src\\Ingame\\GameController.o
 
@@ -149,6 +155,9 @@ $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o: src\\Ingame\\explorer.cpp
 
 $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\mapview.o: src\\Ingame\\mapview.cpp
 	$(CXX) $(CFLAGS_DEBUG__EDITOR_) $(INC_DEBUG__EDITOR_) -c src\\Ingame\\mapview.cpp -o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\mapview.o
+
+$(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\terrain.o: src\\Ingame\\terrain.cpp
+	$(CXX) $(CFLAGS_DEBUG__EDITOR_) $(INC_DEBUG__EDITOR_) -c src\\Ingame\\terrain.cpp -o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\terrain.o
 
 $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\GameController.o: src\\Ingame\\GameController.cpp
 	$(CXX) $(CFLAGS_DEBUG__EDITOR_) $(INC_DEBUG__EDITOR_) -c src\\Ingame\\GameController.cpp -o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\GameController.o

@@ -3,14 +3,17 @@
 
 #include <Ossium.h>
 
+class GameController;
+
 using namespace Ossium;
 
 enum TerrainType
 {
-    TERRAIN_MOUNTAIN = 0,
+    TERRAIN_PLAIN = 0,
     TERRAIN_FOREST,
     TERRAIN_LAKE,
-    TERRAIN_PLAIN
+    TERRAIN_HILL,
+    TERRAIN_MOUNTAIN
 };
 
 struct TerrainSchema : public Schema<TerrainSchema, 20>
@@ -28,11 +31,24 @@ public:
     CONSTRUCT_SCHEMA(Component, TerrainSchema);
     DECLARE_COMPONENT(Component, Terrain);
 
-    void OnLoadFinish();
+    void Init(GameController* gc);
 
-    void Init();
+    void Discover();
 
-    Texture* tex;
+    bool IsDiscovered();
+
+    void Update();
+
+private:
+    GameController* game = nullptr;
+
+    bool discovered = false;
+
+    float delta = 0.0f;
+
+    Texture* tex = nullptr;
+
+    BoxLayout* parentBox = nullptr;
     
 };
 
