@@ -166,8 +166,8 @@ void MapView::SpawnExplorer(Explorer* explorer)
     hiredExplorer->face = spawned->AddComponentOnce<Texture>();
     hiredExplorer->face->OnLoadFinish();
     hiredExplorer->face->SetSource(resources->Get<Image>(hiredExplorer->facePath, *renderer), true);
-    //hiredExplorer->face->SetRenderWidth(0.5f);
-    //hiredExplorer->face->SetRenderHeight(0.5f);
+    hiredExplorer->face->SetRenderWidth(0.5f);
+    hiredExplorer->face->SetRenderHeight(0.5f);
 
     auto hat = hiredExplorer->GetEntity()->CreateChild();
     hat->AddComponentOnce<Transform>();
@@ -265,15 +265,32 @@ void MapView::SelectCell(int i, int j)
     selectedY = (int)j;
     if (i >= 0 && j >= 0)
     {
-        if (TryMoveToZone(i, j) != nullptr)
+        if (!moveTimer.IsStarted())
         {
-            // Move explorer
-            // TODO: lerp!
-            moveTimer.Start();
-            previousZone[0] = explorerZone[0];
-            previousZone[1] = explorerZone[1];
-            explorerZone[0] = i;
-            explorerZone[1] = j;
+            int cost = CostToZone(i, j);
+            if (gc->funds >= cost)
+            {
+                if (TryMoveToZone(i, j) != nullptr)
+                {
+                    // Move explorer, take funds
+                    moveTimer.Start();
+                    previousZone[0] = explorerZone[0];
+                    previousZone[1] = explorerZone[1];
+                    explorerZone[0] = i;
+                    explorerZone[1] = j;
+
+                    gc->funds -= cost;
+                    UpdateText();
+                }
+                else
+                {
+                    // TODO: Error noise
+                }
+            }
+            else
+            {
+                // TODO: Error noise
+            }
         }
     }
 }
@@ -305,5 +322,23 @@ Terrain* MapView::TryMoveToZone(int i, int j)
             zones[i][j + 1]->GetComponent<Terrain>()->Discover();
         }
         return zone;
+    }
+}
+
+int MapView::CostToZone(int i, int j)
+{
+    Terrain* t = zones[i][j]->GetComponent<Terrain>();
+    
+    switch (t->terrain)
+    {
+    case TERRAIN_MOUNTAIN:
+    case TERRAIN_LAKE:
+        return 3;
+    case TERRAIN_FOREST:
+    case TERRAIN_HILL:
+        return 2;
+    case TERRAIN_PLAIN:
+    default:
+        return 1;
     }
 }

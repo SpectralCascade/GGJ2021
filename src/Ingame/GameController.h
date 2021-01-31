@@ -7,6 +7,7 @@ using namespace Ossium;
 
 class Explorer;
 class MapView;
+class EventPopup;
 
 /// The "hub" class that game-specific bits can access everything via.
 class GameController : public Component
@@ -27,6 +28,10 @@ public:
 
     // Update clock
     void Update();
+
+    void UpdateText();
+
+    EventPopup* popup;
 
     Clock clock;
     Timer gameTimer;

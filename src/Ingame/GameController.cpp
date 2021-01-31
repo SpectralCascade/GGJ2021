@@ -1,6 +1,7 @@
 #include "GameController.h"
 #include "explorer.h"
 #include "mapview.h"
+#include "eventpopup.h"
 
 REGISTER_COMPONENT(GameController);
 
@@ -24,6 +25,7 @@ void GameController::OnLoadFinish()
     entity->GetService<Renderer>()->SetBackgroundColor(Color(150, 64, 0));
 
     exploreButton = entity->FindAndGetComponent<Button>("ExploreButton");
+    popup = entity->FindAndGetComponent<EventPopup>("EventPopup");
 #ifndef OSSIUM_EDITOR
     mapView = entity->FindAndGetComponent<MapView>("MapView");
 
@@ -52,11 +54,6 @@ void GameController::OnLoadFinish()
     GenerateExplorers();
 
     fundsText = entity->FindAndGetComponent<Text>("Funds");
-    if (fundsText != nullptr)
-    {
-        fundsText->text = Utilities::Format("Funds: ${0}", funds);
-        fundsText->dirty = true;
-    }
 
 #endif
 }
@@ -66,6 +63,23 @@ void GameController::Update()
     Uint32 nowTime = gameTimer.GetTicks();
     clock.Update((float)(nowTime - oldTime) / 1000.0f);
     oldTime = nowTime;
+
+    static bool firstTime = true;
+    if (popup != nullptr && firstTime)
+    {
+        firstTime = false;
+        popup->GetEntity()->SetActive(false);
+        popup->Show("Test title", "Lorem ipsum dolor set amet bla bla bla bla bla bla bla", "OK", [] () {});
+    }
+}
+
+void GameController::UpdateText()
+{
+    if (fundsText != nullptr)
+    {
+        fundsText->text = Utilities::Format("Funds: ${0}", funds);
+        fundsText->dirty = true;
+    }
 }
 
 void GameController::GenerateExplorers()

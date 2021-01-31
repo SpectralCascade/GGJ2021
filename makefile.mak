@@ -51,11 +51,11 @@ OBJDIR_DEBUG__EDITOR_ = obj\\DebugEditor
 DEP_DEBUG__EDITOR_ = 
 OUT_DEBUG__EDITOR_ = bin\\Debug\\OssiumEditor.exe
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG)\\src\\Ingame\\terrain.o $(OBJDIR_DEBUG)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG)\\src\\main.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)\\src\\Ingame\\eventpopup.o $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG)\\src\\Ingame\\terrain.o $(OBJDIR_DEBUG)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG)\\src\\main.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o $(OBJDIR_RELEASE)\\src\\Ingame\\mapview.o $(OBJDIR_RELEASE)\\src\\Ingame\\terrain.o $(OBJDIR_RELEASE)\\src\\Ingame\\GameController.o $(OBJDIR_RELEASE)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_RELEASE)\\src\\main.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)\\src\\Ingame\\eventpopup.o $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o $(OBJDIR_RELEASE)\\src\\Ingame\\mapview.o $(OBJDIR_RELEASE)\\src\\Ingame\\terrain.o $(OBJDIR_RELEASE)\\src\\Ingame\\GameController.o $(OBJDIR_RELEASE)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_RELEASE)\\src\\main.o
 
-OBJ_DEBUG__EDITOR_ = $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\terrain.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG__EDITOR_)\\src\\main.o
+OBJ_DEBUG__EDITOR_ = $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\eventpopup.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\mapview.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\terrain.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\GameController.o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\UI\\PlacementButton.o $(OBJDIR_DEBUG__EDITOR_)\\src\\main.o
 
 all: debug release debug__editor_
 
@@ -73,6 +73,9 @@ debug: before_debug out_debug after_debug
 
 out_debug: before_debug $(OBJ_DEBUG) $(DEP_DEBUG)
 	$(LD) $(LIBDIR_DEBUG) -o $(OUT_DEBUG) $(OBJ_DEBUG)  $(LDFLAGS_DEBUG) $(LIB_DEBUG)
+
+$(OBJDIR_DEBUG)\\src\\Ingame\\eventpopup.o: src\\Ingame\\eventpopup.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\Ingame\\eventpopup.cpp -o $(OBJDIR_DEBUG)\\src\\Ingame\\eventpopup.o
 
 $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o: src\\Ingame\\explorer.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\Ingame\\explorer.cpp -o $(OBJDIR_DEBUG)\\src\\Ingame\\explorer.o
@@ -112,6 +115,9 @@ release: before_release out_release after_release
 out_release: before_release $(OBJ_RELEASE) $(DEP_RELEASE)
 	$(LD) $(LIBDIR_RELEASE) -o $(OUT_RELEASE) $(OBJ_RELEASE)  $(LDFLAGS_RELEASE) -mwindows $(LIB_RELEASE)
 
+$(OBJDIR_RELEASE)\\src\\Ingame\\eventpopup.o: src\\Ingame\\eventpopup.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\Ingame\\eventpopup.cpp -o $(OBJDIR_RELEASE)\\src\\Ingame\\eventpopup.o
+
 $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o: src\\Ingame\\explorer.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\Ingame\\explorer.cpp -o $(OBJDIR_RELEASE)\\src\\Ingame\\explorer.o
 
@@ -149,6 +155,9 @@ debug__editor_: before_debug__editor_ out_debug__editor_ after_debug__editor_
 
 out_debug__editor_: before_debug__editor_ $(OBJ_DEBUG__EDITOR_) $(DEP_DEBUG__EDITOR_)
 	$(LD) $(LIBDIR_DEBUG__EDITOR_) -o $(OUT_DEBUG__EDITOR_) $(OBJ_DEBUG__EDITOR_)  $(LDFLAGS_DEBUG__EDITOR_) $(LIB_DEBUG__EDITOR_)
+
+$(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\eventpopup.o: src\\Ingame\\eventpopup.cpp
+	$(CXX) $(CFLAGS_DEBUG__EDITOR_) $(INC_DEBUG__EDITOR_) -c src\\Ingame\\eventpopup.cpp -o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\eventpopup.o
 
 $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o: src\\Ingame\\explorer.cpp
 	$(CXX) $(CFLAGS_DEBUG__EDITOR_) $(INC_DEBUG__EDITOR_) -c src\\Ingame\\explorer.cpp -o $(OBJDIR_DEBUG__EDITOR_)\\src\\Ingame\\explorer.o

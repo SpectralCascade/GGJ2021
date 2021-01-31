@@ -37,14 +37,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(580, 470.5)",
+            "position" : "(579.5, 470.5)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1160,
+            "width" : 1159,
             "height" : 941,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -79,14 +79,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 423.45)",
+            "position" : "(568, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 856,
+            "width" : 908.8,
             "height" : 846.9,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/Sprites/map_pergament.png",
@@ -118,14 +118,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 875.13)",
+            "position" : "(568, 875.13)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1070,
+            "width" : 1136,
             "height" : 131.74,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -141,6 +141,13 @@
     },
     "740" : {
         "Name" : "ExplorerRoot",
+        "Active" : 1,
+        "Parent" : 0,
+        "Components" : {
+        }
+    },
+    "993" : {
+        "Name" : "EventPopupRoot",
         "Active" : 1,
         "Parent" : 0,
         "Components" : {
@@ -170,7 +177,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1136.8, 922.18)",
+            "bounds" : "(1135.82, 922.18)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -181,7 +188,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(11.6, 9.41)",
+            "position" : "(11.59, 9.41)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -203,7 +210,7 @@
         "Components" : {
             "Texture" : [{
             "enabled" : 1,
-            "width" : 696,
+            "width" : 695.4,
             "height" : 470.5,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -217,7 +224,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(696, 423.45)",
+            "position" : "(695.4, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -247,14 +254,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(580, 813.965)",
+            "position" : "(579.5, 813.965)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1113.6,
+            "width" : 1112.64,
             "height" : 216.43,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -291,7 +298,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 423.45)",
+            "position" : "(568, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -308,7 +315,7 @@
         }],
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 310.3,
+            "width" : 329.44,
             "height" : 105.392,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -334,7 +341,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.15, 875.13)",
+            "position" : "(959.92, 875.13)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -365,7 +372,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1048.6, 92.218)",
+            "bounds" : "(1113.28, 92.218)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -376,7 +383,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(10.7, 829.021)",
+            "position" : "(11.36, 829.021)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -415,7 +422,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1048.6, -13.174)",
+            "bounds" : "(1113.28, -13.174)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -426,7 +433,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(10.7, 881.717)",
+            "position" : "(11.36, 881.717)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -465,7 +472,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(406.6, 39.522)",
+            "bounds" : "(431.68, 39.522)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -476,7 +483,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(331.7, 855.369)",
+            "position" : "(352.16, 855.369)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -498,6 +505,13 @@
         "Components" : {
         }
     },
+    "994" : {
+        "Name" : "Entity[994]",
+        "Active" : 1,
+        "Parent" : 993,
+        "Components" : {
+        }
+    },
     "11" : {
         "Name" : "Faces",
         "Active" : 1,
@@ -512,7 +526,7 @@
         "Components" : {
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(941.92, 813.965)",
+            "position" : "(941.108, 813.965)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -527,7 +541,7 @@
         }],
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 278.4,
+            "width" : 278.16,
             "height" : 108.215,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -563,7 +577,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(45.472, 792.322)",
+            "position" : "(45.4328, 792.322)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -587,7 +601,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1069.06, 43.286)",
+            "bounds" : "(1068.13, 43.286)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -815,7 +829,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.15, 854.052)",
+            "position" : "(959.92, 854.052)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -837,28 +851,21 @@
         "Components" : {
         }
     },
+    "995" : {
+        "Name" : "Entity[995]",
+        "Active" : 1,
+        "Parent" : 994,
+        "Components" : {
+        }
+    },
     "12" : {
         "Name" : 1,
         "Active" : 1,
         "Parent" : 11,
         "Components" : {
-            "Texture" : [{
-            "enabled" : 1,
-            "width" : 141.15,
-            "height" : 141.15,
-            "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/placeholderface.png",
-            "clip" : "(0, 0, 64, 64)",
-            "tiled" : 0,
-            "flip" : 0,
-            "modulation" : "(255, 255, 255, 255)",
-            "blending" : 1,
-            "fitLayout" : 4,
-            "stretchArea" : "(0, 0, 0, 0)"
-        }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 305.825)",
+            "position" : "(462.441, 305.825)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -871,6 +878,20 @@
             "paddingMin" : "(0, 0)",
             "paddingMax" : "(0, 0)"
         }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 141.15,
+            "height" : 141.15,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/head1.png",
+            "clip" : "(0, 0, 128, 128)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
             "Explorer" : [{
             "enabled" : 1,
             "name" : "Harold",
@@ -878,8 +899,9 @@
             "speed" : 1,
             "luck" : 0,
             "cost" : 0,
+            "tier" : 0,
             "hatPath" : "assets/Sprites/hat.png",
-            "facePath" : "assets/Sprites/placeholderface.png",
+            "facePath" : "assets/Sprites/Characters/head1.png",
             "stachePath" : "assets/Sprites/stache.png",
             "energy" : 3
         }]
@@ -900,7 +922,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(941.92, 792.322)",
+            "position" : "(941.108, 792.322)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -950,7 +972,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 169.38)",
+            "position" : "(215.665, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -972,7 +994,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 254.07)",
+            "position" : "(215.665, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -994,7 +1016,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 338.76)",
+            "position" : "(215.665, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1016,7 +1038,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 423.45)",
+            "position" : "(215.665, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1038,7 +1060,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 508.14)",
+            "position" : "(215.665, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1060,7 +1082,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 592.83)",
+            "position" : "(215.665, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1082,7 +1104,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(203.135, 677.52)",
+            "position" : "(215.665, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1104,7 +1126,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 169.38)",
+            "position" : "(274.388, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1126,7 +1148,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 254.07)",
+            "position" : "(274.388, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1148,7 +1170,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 338.76)",
+            "position" : "(274.388, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1170,7 +1192,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 423.45)",
+            "position" : "(274.388, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1192,7 +1214,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 508.14)",
+            "position" : "(274.388, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1214,7 +1236,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 592.83)",
+            "position" : "(274.388, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1236,7 +1258,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(258.446, 677.52)",
+            "position" : "(274.388, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1258,7 +1280,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 169.38)",
+            "position" : "(333.11, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1280,7 +1302,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 254.07)",
+            "position" : "(333.11, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1302,7 +1324,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 338.76)",
+            "position" : "(333.11, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1324,7 +1346,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 423.45)",
+            "position" : "(333.11, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1346,7 +1368,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 508.14)",
+            "position" : "(333.11, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1368,7 +1390,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 592.83)",
+            "position" : "(333.11, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1390,7 +1412,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(313.757, 677.52)",
+            "position" : "(333.11, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1412,7 +1434,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 169.38)",
+            "position" : "(391.833, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1434,7 +1456,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 254.07)",
+            "position" : "(391.833, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1456,7 +1478,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 338.76)",
+            "position" : "(391.833, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1478,7 +1500,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 423.45)",
+            "position" : "(391.833, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1500,7 +1522,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 508.14)",
+            "position" : "(391.833, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1522,7 +1544,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 592.83)",
+            "position" : "(391.833, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1544,7 +1566,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(369.068, 677.52)",
+            "position" : "(391.833, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1566,7 +1588,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 169.38)",
+            "position" : "(450.555, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1588,7 +1610,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 254.07)",
+            "position" : "(450.555, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1610,7 +1632,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 338.76)",
+            "position" : "(450.555, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1632,7 +1654,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 423.45)",
+            "position" : "(450.555, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1654,7 +1676,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 508.14)",
+            "position" : "(450.555, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1676,7 +1698,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 592.83)",
+            "position" : "(450.555, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1698,7 +1720,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(424.378, 677.52)",
+            "position" : "(450.555, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1720,7 +1742,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 169.38)",
+            "position" : "(509.277, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1742,7 +1764,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 254.07)",
+            "position" : "(509.277, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1764,7 +1786,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 338.76)",
+            "position" : "(509.277, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1786,7 +1808,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 423.45)",
+            "position" : "(509.277, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1808,7 +1830,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 508.14)",
+            "position" : "(509.277, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1830,7 +1852,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 592.83)",
+            "position" : "(509.277, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1852,7 +1874,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(479.689, 677.52)",
+            "position" : "(509.277, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1874,7 +1896,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 169.38)",
+            "position" : "(568, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1896,7 +1918,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 254.07)",
+            "position" : "(568, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1918,7 +1940,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 338.76)",
+            "position" : "(568, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1940,7 +1962,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 423.45)",
+            "position" : "(568, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1962,7 +1984,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 508.14)",
+            "position" : "(568, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1984,7 +2006,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 592.83)",
+            "position" : "(568, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2006,7 +2028,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(535, 677.52)",
+            "position" : "(568, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2028,7 +2050,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 169.38)",
+            "position" : "(626.722, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2050,7 +2072,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 254.07)",
+            "position" : "(626.722, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2072,7 +2094,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 338.76)",
+            "position" : "(626.722, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2094,7 +2116,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 423.45)",
+            "position" : "(626.722, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2116,7 +2138,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 508.14)",
+            "position" : "(626.722, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2138,7 +2160,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 592.83)",
+            "position" : "(626.722, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2160,7 +2182,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(590.311, 677.52)",
+            "position" : "(626.722, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2182,7 +2204,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 169.38)",
+            "position" : "(685.445, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2204,7 +2226,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 254.07)",
+            "position" : "(685.445, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2226,7 +2248,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 338.76)",
+            "position" : "(685.445, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2248,7 +2270,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 423.45)",
+            "position" : "(685.445, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2270,7 +2292,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 508.14)",
+            "position" : "(685.445, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2292,7 +2314,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 592.83)",
+            "position" : "(685.445, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2314,7 +2336,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(645.622, 677.52)",
+            "position" : "(685.445, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2336,7 +2358,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 169.38)",
+            "position" : "(744.167, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2358,7 +2380,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 254.07)",
+            "position" : "(744.167, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2380,7 +2402,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 338.76)",
+            "position" : "(744.167, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2402,7 +2424,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 423.45)",
+            "position" : "(744.167, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2424,7 +2446,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 508.14)",
+            "position" : "(744.167, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2446,7 +2468,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 592.83)",
+            "position" : "(744.167, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2468,7 +2490,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(700.932, 677.52)",
+            "position" : "(744.167, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2490,7 +2512,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 169.38)",
+            "position" : "(802.89, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2512,7 +2534,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 254.07)",
+            "position" : "(802.89, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2534,7 +2556,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 338.76)",
+            "position" : "(802.89, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2556,7 +2578,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 423.45)",
+            "position" : "(802.89, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2578,7 +2600,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 508.14)",
+            "position" : "(802.89, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2600,7 +2622,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 592.83)",
+            "position" : "(802.89, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2622,7 +2644,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(756.243, 677.52)",
+            "position" : "(802.89, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2644,7 +2666,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 169.38)",
+            "position" : "(861.612, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2666,7 +2688,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 254.07)",
+            "position" : "(861.612, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2688,7 +2710,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 338.76)",
+            "position" : "(861.612, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2710,7 +2732,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 423.45)",
+            "position" : "(861.612, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2732,7 +2754,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 508.14)",
+            "position" : "(861.612, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2754,7 +2776,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 592.83)",
+            "position" : "(861.612, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2776,7 +2798,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(811.554, 677.52)",
+            "position" : "(861.612, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2798,7 +2820,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 169.38)",
+            "position" : "(920.335, 169.38)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2820,7 +2842,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 254.07)",
+            "position" : "(920.335, 254.07)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2842,7 +2864,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 338.76)",
+            "position" : "(920.335, 338.76)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2864,7 +2886,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 423.45)",
+            "position" : "(920.335, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2886,7 +2908,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 508.14)",
+            "position" : "(920.335, 508.14)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2908,7 +2930,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 592.83)",
+            "position" : "(920.335, 592.83)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2930,7 +2952,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(866.865, 677.52)",
+            "position" : "(920.335, 677.52)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -2941,6 +2963,13 @@
         "Name" : "Entity[743]",
         "Active" : 1,
         "Parent" : 742,
+        "Components" : {
+        }
+    },
+    "996" : {
+        "Name" : "Entity[996]",
+        "Active" : 1,
+        "Parent" : 995,
         "Components" : {
         }
     },
@@ -2959,7 +2988,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 207.02)",
+            "position" : "(462.441, 207.02)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3009,7 +3038,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 305.825)",
+            "position" : "(462.441, 305.825)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3045,7 +3074,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 305.825)",
+            "position" : "(462.441, 305.825)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3101,7 +3130,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 376.4)",
+            "position" : "(462.441, 376.4)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3131,7 +3160,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 418.745)",
+            "position" : "(462.441, 418.745)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3201,7 +3230,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 461.09)",
+            "position" : "(462.441, 461.09)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3223,7 +3252,7 @@
         "Components" : {
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 183.744,
+            "width" : 183.586,
             "height" : 91.7475,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -3241,7 +3270,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 591.654)",
+            "position" : "(462.441, 591.654)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3274,7 +3303,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(462.84, 503.435)",
+            "position" : "(462.441, 503.435)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3316,6 +3345,13 @@
         "Components" : {
         }
     },
+    "997" : {
+        "Name" : "Entity[997]",
+        "Active" : 1,
+        "Parent" : 996,
+        "Components" : {
+        }
+    },
     "32" : {
         "Name" : "HireText",
         "Active" : 1,
@@ -3348,6 +3384,387 @@
                 "kerning" : 1
             },
             "bounds" : "(0, 0)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "998" : {
+        "Name" : "Entity[998]",
+        "Active" : 1,
+        "Parent" : 997,
+        "Components" : {
+        }
+    },
+    "1006" : {
+        "Name" : "Entity[1006]",
+        "Active" : 1,
+        "Parent" : 998,
+        "Components" : {
+        }
+    },
+    "1007" : {
+        "Name" : "EventPopup",
+        "Active" : 0,
+        "Parent" : 1006,
+        "Components" : {
+            "EventPopup" : [{
+            "enabled" : 1
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 1136,
+            "height" : 941,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/blankcell.png",
+            "clip" : "(0, 0, 64, 64)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 200)",
+            "blending" : 1,
+            "fitLayout" : 3,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "LayoutSurface" : [{
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(568, 470.5)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }]
+        }
+    },
+    "999" : {
+        "Name" : "EventPopupChild",
+        "Active" : 1,
+        "Parent" : 1007,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.28, 0.02)",
+            "anchorMax" : "(0.72, 0.86)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "LayoutSurface" : [{
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(568, 414.04)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 499.84,
+            "height" : 790.44,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/oldpage.png",
+            "clip" : "(0, 0, 1112, 1536)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 3,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }]
+        }
+    },
+    "1000" : {
+        "Name" : "Title",
+        "Active" : 1,
+        "Parent" : 999,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0, 0.05)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(318.08, 58.342)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Urgent Request",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 42,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(499.84, 711.396)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "1001" : {
+        "Name" : "Description",
+        "Active" : 1,
+        "Parent" : 999,
+        "Components" : {
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Lorem ipsum dolor set amet lorem ipsum dolor set amet lorem ipsum dolor set amet bla bla bla line wrapping test right here uh huh.",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 0,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(399.872, 604.687)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(368.064, 170.98)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.1, 0.15)",
+            "anchorMax" : "(0.9, 1)",
+            "origin" : "(0, 0.05)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
+    "1002" : {
+        "Name" : "Opt1Button",
+        "Active" : 1,
+        "Parent" : 999,
+        "Components" : {
+            "Button" : [{
+            "enabled" : 1
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.02, 0.6)",
+            "anchorMax" : "(0.5, 0.98)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(448.038, 643.268)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "StateSprite" : [{
+            "enabled" : 1,
+            "width" : 239.923,
+            "height" : 300.367,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/UI/Buttons/button.png",
+            "clip" : "(0, 0, 33, 33)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(200, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 3,
+            "stretchArea" : "(11, 11, 1, 1)",
+            "currentState" : "",
+            "currentSubState" : 0,
+            "horizontalFlag" : 1,
+            "totalCurrentSegments" : 3
+        }]
+        }
+    },
+    "1004" : {
+        "Name" : "Opt2Button",
+        "Active" : 1,
+        "Parent" : 999,
+        "Components" : {
+            "StateSprite" : [{
+            "enabled" : 1,
+            "width" : 239.923,
+            "height" : 300.367,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/UI/Buttons/button.png",
+            "clip" : "(0, 0, 33, 33)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(200, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 3,
+            "stretchArea" : "(11, 11, 1, 1)",
+            "currentState" : "",
+            "currentSubState" : 0,
+            "horizontalFlag" : 1,
+            "totalCurrentSegments" : 3
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(687.962, 643.268)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.5, 0.6)",
+            "anchorMax" : "(0.98, 0.98)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Button" : [{
+            "enabled" : 1
+        }]
+        }
+    },
+    "1003" : {
+        "Name" : "Opt1Text",
+        "Active" : 1,
+        "Parent" : 1002,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.04, 0)",
+            "anchorMax" : "(0.96, 1)",
+            "origin" : "(0, 0.2)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(337.674, 553.157)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "Yes",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(220.729, 180.22)",
+            "boxed" : 0,
+            "boxPaddingWidth" : 4,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "outline" : 0,
+            "hinting" : 0,
+            "renderMode" : 0
+        }]
+        }
+    },
+    "1005" : {
+        "Name" : "Opt2Text",
+        "Active" : 1,
+        "Parent" : 1004,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.04, 0)",
+            "anchorMax" : "(0.96, 1)",
+            "origin" : "(0, 0.2)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(577.597, 553.157)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Text" : [{
+            "enabled" : 1,
+            "text" : "No",
+            "applyMarkup" : 1,
+            "font_guid" : "assets/Orkney Regular.ttf",
+            "layout" : {
+                "mainColor" : "(0, 0, 0, 255)",
+                "mainStyle" : 0,
+                "pointSize" : 24,
+                "minPointSize" : 12,
+                "maxPointSize" : 0,
+                "dynamicFit" : 0,
+                "alignment" : 2,
+                "direction" : 0,
+                "lineWrap" : 1,
+                "ignoreWhitespace" : 1,
+                "wordBreak" : 0,
+                "kerning" : 1
+            },
+            "bounds" : "(220.729, 180.22)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,

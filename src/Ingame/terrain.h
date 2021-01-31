@@ -9,11 +9,12 @@ using namespace Ossium;
 
 enum TerrainType
 {
-    TERRAIN_PLAIN = 0,
-    TERRAIN_FOREST,
-    TERRAIN_LAKE,
-    TERRAIN_HILL,
-    TERRAIN_MOUNTAIN
+    TERRAIN_NONE = 0,
+    TERRAIN_PLAIN = 1,
+    TERRAIN_FOREST = 2,
+    TERRAIN_LAKE = 4,
+    TERRAIN_HILL = 8,
+    TERRAIN_MOUNTAIN = 16
 };
 
 struct TerrainSchema : public Schema<TerrainSchema, 20>

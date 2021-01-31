@@ -42,6 +42,8 @@ public:
 
     void Update();
 
+    int CostToZone(int i, int j);
+
     Timer moveTimer;
     float oldTime = 0;
 
