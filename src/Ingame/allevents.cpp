@@ -328,31 +328,7 @@ void EventSystem::SetupEvents(GameController* game)
     event.outcomeOtherFunc = [&] () {};
 
     events.push_back(event);
-    
-    
-    
-    event = GameEvent();
 
-    event.title = "";
-    event.description = "";
-    event.outcomeGood = "";
-    event.outcomeBad = "";
-    event.outcomeOther = "";
-    event.yes = "Yes";
-    event.no = "No";
-
-    event.chanceGood = 0.8f;
-    event.chanceBad = 0.2f;
-    event.chanceOther = 0.0f;
-
-    event.terrainCondition = TERRAIN_PLAIN | TERRAIN_MOUNTAIN | TERRAIN_LAKE | TERRAIN_HILL | TERRAIN_FOREST;
-
-    event.outcomeGoodFunc = [&] () {};
-    event.outcomeBadFunc = [&] () {};
-    event.outcomeOtherFunc = [&] () {};
-
-    events.push_back(event);
-    
     
     event = GameEvent();
 

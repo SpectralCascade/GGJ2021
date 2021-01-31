@@ -12,6 +12,7 @@ void GameController::OnCreate()
     footsteps = new AudioPlayer();
     footsteps->Link(master);
     rng = new Rand();
+    names = new VictorianNames();
 }
 
 void GameController::OnDestroy()
@@ -26,7 +27,34 @@ void GameController::OnLoadFinish()
 
     exploreButton = entity->FindAndGetComponent<Button>("ExploreButton");
     popup = entity->FindAndGetComponent<EventPopup>("EventPopup");
+    explorerMenu = entity->Find("ExplorerMenu");
+    bottomBar = entity->Find("BottomBar");
+    mainMenu = entity->Find("MainMenu");
+
+    hire1 = entity->FindAndGetComponent<Button>("Hire1");
+    hire2 = entity->FindAndGetComponent<Button>("Hire2");
+    hire3 = entity->FindAndGetComponent<Button>("Hire3");
+
 #ifndef OSSIUM_EDITOR
+    if (hire1 != nullptr)
+    {
+        hire1->OnClicked += [&] (Button& caller) {
+            HireExplorer(menuExplorers[0]);
+        };
+    }
+    if (hire2 != nullptr)
+    {
+        hire2->OnClicked += [&] (Button& caller) {
+            HireExplorer(menuExplorers[1]);
+        };
+    }
+    if (hire3 != nullptr)
+    {
+        hire3->OnClicked += [&] (Button& caller) {
+            HireExplorer(menuExplorers[2]);
+        };
+    }
+
     mapView = entity->FindAndGetComponent<MapView>("MapView");
 
     if (exploreButton != nullptr)
@@ -38,7 +66,7 @@ void GameController::OnLoadFinish()
     }
     for (unsigned int i = 0; i < 3; i++)
     {
-        menuExplorers[i] = entity->FindAndGetComponent<Explorer>(Utilities::Format("{0}", i));
+        menuExplorers[i] = entity->FindAndGetComponent<Explorer>(Utilities::Format("{0}", i + 1));
         if (menuExplorers[i] != nullptr)
         {
             hireCosts[i] = entity->FindAndGetComponent<Text>("Cost", menuExplorers[i]->GetEntity());
@@ -57,6 +85,21 @@ void GameController::OnLoadFinish()
 
     events = new EventSystem();
     events->SetupEvents(this);
+
+    Button* playButton = mainMenu->FindAndGetComponent<Button>("PlayButton");
+    Button* quitButton = mainMenu->FindAndGetComponent<Button>("QuitButton");
+    if (playButton != nullptr)
+    {
+        playButton->OnClicked += [&] (Button& caller) {
+            GoNewGame();
+        };
+    }
+    if (quitButton != nullptr)
+    {
+        quitButton->OnClicked += [&] (Button& caller) {
+            GoQuit();
+        };
+    }
 
 #endif
 }
@@ -104,6 +147,57 @@ void GameController::GenerateExplorers()
     // Applies to all
     for (unsigned int i = 0; i < 3; i++)
     {
-        // TODO: Randomise name and character appearance
+        menuExplorers[i]->name = Utilities::Format("{0} {1}", PickRandom(names->firstNames), PickRandom(names->lastNames));
+        menuExplorers[i]->cost = (menuExplorers[i]->tier + 1) * 10;
+        int face = rng->Int(1, 6);
+        menuExplorers[i]->facePath = Utilities::Format("assets/Sprites/Characters/Head_{0}.png", face);
+        menuExplorers[i]->hatPath = Utilities::Format("assets/Sprites/Characters/Hat_{0}.png", menuExplorers[i]->tier + 1);
+        int accessory = rng->Int(1, 7);
+        menuExplorers[i]->stachePath = Utilities::Format(
+            "assets/Sprites/Characters/Accessory_{0}{1}.png",
+            accessory, 
+            accessory == 1 && face == 2 ? "_2" : (accessory == 4 && (face == 2 || face == 3) ? "_2_3" : "")
+        );
     }
+}
+
+void GameController::GoMainMenu()
+{
+    mainMenu->SetActive(true);
+}
+
+void GameController::GoNewGame()
+{
+    GoExplorerMenu();
+}
+
+void GameController::GoQuit()
+{
+    // TODO
+}
+
+void GameController::GoExplorerMenu()
+{
+    mainMenu->SetActive(false);
+    bottomBar->SetActive(false);
+    mapView->GetEntity()->SetActive(false);
+    explorerMenu->SetActive(true);
+}
+
+void GameController::GoMapView()
+{
+    mainMenu->SetActive(false);
+    explorerMenu->SetActive(false);
+    bottomBar->SetActive(true);
+    mapView->GetEntity()->SetActive(true);
+    mapView->UpdateText();
+}
+
+void GameController::HireExplorer(Explorer* e)
+{
+    GoMapView();
+
+    mapView->GenerateMap();
+    // TODO: remove me, should only spawn on map load from hiring menu
+    mapView->SpawnExplorer(e);
 }

@@ -27,6 +27,8 @@ struct ExplorerMetaSchema : public Schema<ExplorerMetaSchema, 20>
 
     M(std::string, stachePath) = "assets/Sprites/stache.png";
 
+    M(std::string, hairPath) = "assets/Sprites/Characters/Hair_1.png";
+
 };
 
 struct ExplorerSchema : public ExplorerMetaSchema
@@ -50,6 +52,7 @@ public:
     Texture* hat = nullptr;
     Texture* stache = nullptr;
     Texture* face = nullptr;
+    Texture* hair = nullptr;
 
     Text* resText = nullptr;
     Text* speedText = nullptr;

@@ -5,6 +5,7 @@ REGISTER_COMPONENT(Explorer);
 void Explorer::OnLoadFinish()
 {
     hat = entity->FindAndGetComponent<Texture>("Hat", entity);
+    hair = entity->FindAndGetComponent<Texture>("Hair", entity);
     stache = entity->FindAndGetComponent<Texture>("Stache", entity);
     face = entity->GetComponent<Texture>();
 
@@ -37,6 +38,11 @@ void Explorer::UpdateAppearance()
     if (stache != nullptr)
     {
         stache->SetSource(resources->Get<Image>(stachePath, *renderer));
+    }
+
+    if (hair != nullptr)
+    {
+        hair->SetSource(resources->Get<Image>(hairPath, *renderer));
     }
 
     // Update stats text

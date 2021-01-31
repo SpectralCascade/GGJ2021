@@ -3,6 +3,7 @@
 
 #include <Ossium.h>
 #include "allevents.h"
+#include "allnames.h"
 
 using namespace Ossium;
 
@@ -31,6 +32,24 @@ public:
     void Update();
 
     void UpdateText();
+
+    void GoMainMenu();
+    void GoNewGame();
+    void GoQuit();
+    void GoExplorerMenu();
+    void GoMapView();
+
+    void HireExplorer(Explorer* e);
+
+    Entity* bottomBar = nullptr;
+    Entity* explorerMenu = nullptr;
+    Entity* mainMenu = nullptr;
+
+    Button* hire1 = nullptr;
+    Button* hire2 = nullptr;
+    Button* hire3 = nullptr;
+
+    VictorianNames* names = nullptr;
 
     EventPopup* popup;
     EventSystem* events;

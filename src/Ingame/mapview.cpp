@@ -30,10 +30,6 @@ void MapView::OnLoadFinish()
 
 #ifndef OSSIUM_EDITOR
     DEBUG_ASSERT(gc != nullptr);
-    UpdateText();
-    GenerateMap();
-    // TODO: remove me, should only spawn on map load from hiring menu
-    SpawnExplorer(entity->FindAndGetComponent<Explorer>("1"));
 #endif
 
 }
@@ -53,6 +49,7 @@ void MapView::ClearMap()
 void MapView::GenerateMap()
 {
     ClearMap();
+    grid->LayoutRefresh();
     zones.reserve(grid->cols);
     for (unsigned int i = 0, counti = grid->cols; i < counti; i++)
     {
@@ -168,22 +165,26 @@ void MapView::SpawnExplorer(Explorer* explorer)
 
     spawned->AddComponentOnce<Transform>();
     hiredExplorer->face = spawned->AddComponentOnce<Texture>();
+    hiredExplorer->face->imgPath = hiredExplorer->facePath;
     hiredExplorer->face->OnLoadFinish();
-    hiredExplorer->face->SetSource(resources->Get<Image>(hiredExplorer->facePath, *renderer), true);
-    hiredExplorer->face->SetRenderWidth(0.5f);
-    hiredExplorer->face->SetRenderHeight(0.5f);
+    hiredExplorer->face->width = 64;
+    hiredExplorer->face->height = 64;
 
     auto hat = hiredExplorer->GetEntity()->CreateChild();
     hat->AddComponentOnce<Transform>();
     hiredExplorer->hat = hat->AddComponentOnce<Texture>();
+    hiredExplorer->hat->imgPath = hiredExplorer->hatPath;
     hiredExplorer->hat->OnLoadFinish();
-    hiredExplorer->hat->SetSource(resources->Get<Image>(hiredExplorer->hatPath, *renderer), true);
+    hiredExplorer->hat->width = 64;
+    hiredExplorer->hat->height = 64;
 
     auto stache = hiredExplorer->GetEntity()->CreateChild();
     stache->AddComponentOnce<Transform>();
     hiredExplorer->stache = stache->AddComponentOnce<Texture>();
+    hiredExplorer->stache->imgPath = hiredExplorer->stachePath;
     hiredExplorer->stache->OnLoadFinish();
-    hiredExplorer->stache->SetSource(resources->Get<Image>(hiredExplorer->stachePath, *renderer), true);
+    hiredExplorer->stache->width = 64;
+    hiredExplorer->stache->height = 64;
 
     hiredExplorer->resText = entity->FindAndGetComponent<Text>("Health");
     hiredExplorer->luckText = nullptr;
