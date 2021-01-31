@@ -8,11 +8,11 @@ using namespace Ossium;
 class Explorer;
 class Terrain;
 
-struct MapViewSchema : public Schema<MapViewSchema, 20>
+struct MapViewSchema : public Schema<MapViewSchema, 40>
 {
-    DECLARE_BASE_SCHEMA(MapViewSchema, 20);
+    DECLARE_BASE_SCHEMA(MapViewSchema, 40);
     
-    SDL_Color gridColor = {0, 0, 0, 60};
+    M(SDL_Color, gridColor) = {0, 0, 0, 60};
 
 };
 
@@ -43,6 +43,11 @@ public:
     void Update();
 
     int CostToZone(int i, int j);
+
+    void OnMoved();
+
+    Uint32 lpt = 0;
+    Timer pigeonTimer;
 
     Timer moveTimer;
     float oldTime = 0;

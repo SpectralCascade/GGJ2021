@@ -25,6 +25,7 @@ void EventPopup::Show(string title, string desc, string opt1text, function<void(
 
 void EventPopup::Show(string title, string desc, string opt1text, function<void()> opt1func, string opt2text, function<void()> opt2func)
 {
+    entity->SetActive(false);
     fadingIn = true;
     fadingOut = false;
 

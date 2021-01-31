@@ -58,6 +58,8 @@ public:
 
     AudioPlayer* footsteps = nullptr;
 
+    GameEvent* toEvaluate = nullptr;
+
 };
 
 #endif // GameController_H

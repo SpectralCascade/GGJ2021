@@ -3,6 +3,7 @@
 #include "UI/PlacementButton.h"
 #include "GameController.h"
 #include "terrain.h"
+#include "eventpopup.h"
 
 using namespace std;
 
@@ -20,6 +21,8 @@ void MapView::OnLoadFinish()
 
     fundsText = entity->FindAndGetComponent<Text>("FundsText");
     progressText = entity->FindAndGetComponent<Text>("MapCompletion");
+
+    pigeonTimer.Stop();
 
     explorerParent = entity->Find("ExplorerParent");
 
@@ -194,6 +197,7 @@ void MapView::SpawnExplorer(Explorer* explorer)
 
     zones[explorerZone[0]][explorerZone[1]]->GetComponent<Terrain>()->Discover();
     TryMoveToZone(explorerZone[0], explorerZone[1]);
+    OnMoved();
 }
 
 void MapView::UpdateText()
@@ -208,12 +212,39 @@ void MapView::UpdateText()
         if (progressText != nullptr)
         {
             progressText->text = Utilities::Format("Map Progress: {0}%", (int)(100.0f * ((float)discovered / (float)(grid->rows * grid->cols))));
+            progressText->dirty = true;
         }
     }
 }
 
 void MapView::Update()
 {
+    if (pigeonTimer.IsStarted())
+    {
+        auto resources = entity->GetService<ResourceController>();
+        auto pt = pigeonTimer.GetTicks();
+
+        Uint32 flaps = 6;
+        for (Uint32 i = 0; i < flaps; i++)
+        {
+            Uint32 delayTime = 300;
+            Uint32 target = i * delayTime;
+            if (lpt <= target && pt > target)
+            {
+                gc->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/UI/Wing_Flapping-00{0}.wav", gc->rng->Int(1, 8))));
+                lpt = pt;
+                break;
+            }
+            else if (pt > flaps * delayTime)
+            {
+                gc->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/UI/Pigeon-00{0}.wav", gc->rng->Int(1, 5))));
+                pigeonTimer.Stop();
+                lpt = 0;
+                break;
+            }
+        }
+    }
+
     if (moveTimer.IsStarted() && hiredExplorer != nullptr)
     {
         float seconds = (float)moveTimer.GetTicks() / 1000.0f;
@@ -243,6 +274,8 @@ void MapView::Update()
         {
             // Finished moving
             hiredExplorer->GetTransform()->SetWorldPosition(grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition());            
+            OnMoved();
+
             moveTimer.Stop();
             oldTime = 0;
         }
@@ -266,7 +299,7 @@ void MapView::SelectCell(int i, int j)
     selectedY = (int)j;
     if (i >= 0 && j >= 0)
     {
-        if (!moveTimer.IsStarted())
+        if (!moveTimer.IsStarted() && !gc->popup->GetEntity()->IsActive() && gc->toEvaluate == nullptr)
         {
             int cost = CostToZone(i, j);
             if (gc->funds >= cost)
@@ -305,23 +338,6 @@ Terrain* MapView::TryMoveToZone(int i, int j)
     }
     else
     {
-        // Explore surrounding zones
-        if (i - 1 >= 0)
-        {
-            zones[i - 1][j]->GetComponent<Terrain>()->Discover();
-        }
-        if (i + 1 < (int)grid->cols)
-        {
-            zones[i + 1][j]->GetComponent<Terrain>()->Discover();
-        }
-        if (j - 1 >= 0)
-        {
-            zones[i][j - 1]->GetComponent<Terrain>()->Discover();
-        }
-        if (j + 1 < (int)grid->rows)
-        {
-            zones[i][j + 1]->GetComponent<Terrain>()->Discover();
-        }
         return zone;
     }
 }
@@ -342,4 +358,44 @@ int MapView::CostToZone(int i, int j)
     default:
         return 1;
     }
+}
+
+void MapView::OnMoved()
+{
+    int i = explorerZone[0];
+    int j = explorerZone[1];
+
+    // Explore surrounding zones
+    if (i - 1 >= 0)
+    {
+        zones[i - 1][j]->GetComponent<Terrain>()->Discover();
+    }
+    if (i + 1 < (int)grid->cols)
+    {
+        zones[i + 1][j]->GetComponent<Terrain>()->Discover();
+    }
+    if (j - 1 >= 0)
+    {
+        zones[i][j - 1]->GetComponent<Terrain>()->Discover();
+    }
+    if (j + 1 < (int)grid->rows)
+    {
+        zones[i][j + 1]->GetComponent<Terrain>()->Discover();
+    }
+
+    if (gc->rng->Float() < 0.3f)
+    {
+        Terrain* t = zones[explorerZone[0]][explorerZone[1]]->GetComponent<Terrain>();
+        while (true)
+        {
+            GameEvent* e = PickRandom(gc->events->events);
+            if (e->CanFire(t->terrain))
+            {
+                pigeonTimer.Start();
+                e->Fire(gc);
+                break;
+            }
+        }
+    }
+
 }

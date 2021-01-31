@@ -42,7 +42,11 @@ public:
 
     GameEvent();
 
-    void Evaluate(bool decision, GameController* gc);
+    bool CanFire(int terrainType);
+
+    void Fire(GameController* gc);
+
+    void Evaluate(GameController* gc);
 
     std::function<void()> outcomeGoodFunc;
     std::function<void()> outcomeBadFunc;

@@ -67,12 +67,10 @@ void GameController::Update()
     clock.Update((float)(nowTime - oldTime) / 1000.0f);
     oldTime = nowTime;
 
-    static bool firstTime = true;
-    if (popup != nullptr && firstTime)
+    if (toEvaluate != nullptr)
     {
-        firstTime = false;
-        popup->GetEntity()->SetActive(false);
-        popup->Show("Test title", "Lorem ipsum dolor set amet bla bla bla bla bla bla bla", "OK", [] () {});
+        toEvaluate->Evaluate(this);
+        toEvaluate = nullptr;
     }
 }
 
