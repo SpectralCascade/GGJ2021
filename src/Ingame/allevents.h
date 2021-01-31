@@ -7,9 +7,9 @@ using namespace Ossium;
 
 class GameController;
 
-struct GameEventSchema : public Schema<GameEventSchema, 40>
+struct GameEventSchema : public Schema<GameEventSchema, 20>
 {
-    DECLARE_BASE_SCHEMA(GameEventSchema, 40);
+    DECLARE_BASE_SCHEMA(GameEventSchema, 20);
     
     M(std::string, title);
 
@@ -50,8 +50,13 @@ public:
 
 };
 
-void SetupEvents(GameController* game);
+class EventSystem
+{
+public:
+    void SetupEvents(GameController* game);
 
-std::vector<GameEvent> events;
+    std::vector<GameEvent> events;
+
+};
 
 #endif // ALLEVENTS_H

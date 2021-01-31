@@ -55,6 +55,9 @@ void GameController::OnLoadFinish()
 
     fundsText = entity->FindAndGetComponent<Text>("Funds");
 
+    events = new EventSystem();
+    events->SetupEvents(this);
+
 #endif
 }
 

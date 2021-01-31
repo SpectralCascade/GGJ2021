@@ -109,6 +109,8 @@
 			<Add directory="C:/SDL2/SDL2_mixer-2.0.4/x86_64-w64-mingw32/lib" />
 			<Add directory="C:/SDL2/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="src/Ingame/allevents.cpp" />
+		<Unit filename="src/Ingame/allevents.h" />
 		<Unit filename="src/Ingame/eventpopup.cpp" />
 		<Unit filename="src/Ingame/eventpopup.h" />
 		<Unit filename="src/Ingame/explorer.cpp" />

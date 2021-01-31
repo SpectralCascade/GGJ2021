@@ -2,6 +2,7 @@
 #define GameController_H
 
 #include <Ossium.h>
+#include "allevents.h"
 
 using namespace Ossium;
 
@@ -32,6 +33,7 @@ public:
     void UpdateText();
 
     EventPopup* popup;
+    EventSystem* events;
 
     Clock clock;
     Timer gameTimer;

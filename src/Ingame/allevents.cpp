@@ -19,25 +19,25 @@ void GameEvent::Evaluate(bool decision, GameController* gc)
 
         if (chance <= chanceGood)
         {
-            popup->Show("Good News!", outcomeGood, "X", outcomeGoodFunc);
+            gc->popup->Show("Good News!", outcomeGood, "X", outcomeGoodFunc);
         }
         else if (chance <= chanceGood + chanceBad)
         {
-            popup->Show("Bad News...", outcomeBad, "X", outcomeBadFunc);
+            gc->popup->Show("Bad News...", outcomeBad, "X", outcomeBadFunc);
         }
         else
         {
-            popup->Show("", outcomeOther, "X", outcomeOtherFunc);
+            gc->popup->Show("", outcomeOther, "X", outcomeOtherFunc);
         }
     }
 }
 
-void SetupEvents(GameController* game)
+void EventSystem::SetupEvents(GameController* game)
 {
 
     GameEvent event;
 
-    // Copy and paste this template and fill in words between the "" double quotes.
+    // Copy and paste this template and fill in words between the "" double quotes where applicable (can leave outcomeOther blank if no other outcome).
     // The chances are percentages where 0.5f = 50%, 0.25f = 25% and so on; higher percentage = higher chance of occurring.
     // You can remove terrain types from event.terrainCondition to specify which terrain the event can happen on,
     // for instance to make sure the event only fires for plains and hills, do: event.terrainCondition = TERRAIN_PLAIN | TERRAIN_HILL;
@@ -60,7 +60,6 @@ void SetupEvents(GameController* game)
 
     event.terrainCondition = TERRAIN_PLAIN | TERRAIN_MOUNTAIN | TERRAIN_LAKE | TERRAIN_HILL | TERRAIN_FOREST;
 
-    // Tim TODO; will put outcome logic in here.
     event.outcomeGoodFunc = [&] () {};
     event.outcomeBadFunc = [&] () {};
     event.outcomeOtherFunc = [&] () {};

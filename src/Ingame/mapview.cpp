@@ -26,6 +26,7 @@ void MapView::OnLoadFinish()
     moveTimer.Stop();
 
 #ifndef OSSIUM_EDITOR
+    DEBUG_ASSERT(gc != nullptr);
     UpdateText();
     GenerateMap();
     // TODO: remove me, should only spawn on map load from hiring menu
