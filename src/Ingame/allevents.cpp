@@ -107,9 +107,12 @@ void EventSystem::SetupEvents(GameController* game)
     
     event.terrainCondition = TERRAIN_PLAIN | TERRAIN_MOUNTAIN | TERRAIN_HILL;
 
-    event.outcomeGoodFunc = [&] () {};
+    event.outcomeGoodFunc = [=] () { game->funds += 5; };
     event.outcomeBadFunc = [&] () {};
-    event.outcomeOtherFunc = [&] () {};
+    event.outcomeOtherFunc = [=] () {
+        auto resources = game->GetEntity()->GetService<ResourceController>();
+        game->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/Wilhelm/Screams/Damage_Scream-00{0}.wav", game->rng->Int(1, 6))));
+    };
 
     events.push_back(event);
     
@@ -278,8 +281,10 @@ void EventSystem::SetupEvents(GameController* game)
 
     event.outcomeGoodFunc = [&] () {};
     event.outcomeBadFunc = [&] () {};
-    event.outcomeOtherFunc = [&] () {};
-
+    event.outcomeOtherFunc = [=] () {
+        auto resources = game->GetEntity()->GetService<ResourceController>();
+        game->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/Wilhelm/Screams/Damage_Scream-00{0}.wav", game->rng->Int(1, 6))));
+    };
     events.push_back(event);
     
     
@@ -325,8 +330,10 @@ void EventSystem::SetupEvents(GameController* game)
 
     event.outcomeGoodFunc = [&] () {};
     event.outcomeBadFunc = [&] () {};
-    event.outcomeOtherFunc = [&] () {};
-
+    event.outcomeOtherFunc = [=] () {
+        auto resources = game->GetEntity()->GetService<ResourceController>();
+        game->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/Wilhelm/Screams/Damage_Scream-00{0}.wav", game->rng->Int(1, 6))));
+    };
     events.push_back(event);
 
     
@@ -393,7 +400,10 @@ void EventSystem::SetupEvents(GameController* game)
     event.terrainCondition = TERRAIN_MOUNTAIN;
 
     event.outcomeGoodFunc = [&] () {};
-    event.outcomeBadFunc = [&] () {};
+    event.outcomeBadFunc = [=] () {
+        auto resources = game->GetEntity()->GetService<ResourceController>();
+        game->footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/Wilhelm/Screams/Damage_Scream-00{0}.wav", game->rng->Int(1, 6))));
+    };
     event.outcomeOtherFunc = [&] () {};
 
     events.push_back(event);

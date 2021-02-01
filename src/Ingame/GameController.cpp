@@ -11,6 +11,8 @@ void GameController::OnCreate()
     master = mixer->InsertBus("Master");
     footsteps = new AudioPlayer();
     footsteps->Link(master);
+    music = new AudioPlayer();
+    music->Link(master);
     rng = new Rand();
     names = new VictorianNames();
 }
@@ -28,7 +30,7 @@ void GameController::OnLoadFinish()
     exploreButton = entity->FindAndGetComponent<Button>("ExploreButton");
     popup = entity->FindAndGetComponent<EventPopup>("EventPopup");
     explorerMenu = entity->Find("ExplorerMenu");
-    bottomBar = entity->Find("BottomBar");
+    bottomBar = entity->Find("BottomBarMAIN");
     mainMenu = entity->Find("MainMenu");
 
     hire1 = entity->FindAndGetComponent<Button>("Hire1");
@@ -36,6 +38,12 @@ void GameController::OnLoadFinish()
     hire3 = entity->FindAndGetComponent<Button>("Hire3");
 
 #ifndef OSSIUM_EDITOR
+    bottomBar->SetActive(false);
+    explorerMenu->SetActive(false);
+
+    auto resources = entity->GetService<ResourceController>();
+    music->Play(resources->Get<AudioClip>("assets/Audio/Music/menu.wav"), 0.5f);
+
     if (hire1 != nullptr)
     {
         hire1->OnClicked += [&] (Button& caller) {
@@ -67,6 +75,7 @@ void GameController::OnLoadFinish()
     for (unsigned int i = 0; i < 3; i++)
     {
         menuExplorers[i] = entity->FindAndGetComponent<Explorer>(Utilities::Format("{0}", i + 1));
+        explorerNames[i] = entity->FindAndGetComponent<Text>("Name", menuExplorers[i]->GetEntity());
         if (menuExplorers[i] != nullptr)
         {
             hireCosts[i] = entity->FindAndGetComponent<Text>("Cost", menuExplorers[i]->GetEntity());
@@ -147,7 +156,7 @@ void GameController::GenerateExplorers()
     // Applies to all
     for (unsigned int i = 0; i < 3; i++)
     {
-        menuExplorers[i]->name = Utilities::Format("{0} {1}", PickRandom(names->firstNames), PickRandom(names->lastNames));
+        menuExplorers[i]->name = Utilities::Format("{0} {1}", *PickRandom(names->firstNames), *PickRandom(names->lastNames));
         menuExplorers[i]->cost = (menuExplorers[i]->tier + 1) * 10;
         int face = rng->Int(1, 6);
         menuExplorers[i]->facePath = Utilities::Format("assets/Sprites/Characters/Head_{0}.png", face);
@@ -158,12 +167,18 @@ void GameController::GenerateExplorers()
             accessory, 
             accessory == 1 && face == 2 ? "_2" : (accessory == 4 && (face == 2 || face == 3) ? "_2_3" : "")
         );
+
+        menuExplorers[i]->UpdateAppearance();
+        explorerNames[i]->text = menuExplorers[i]->name;
+        explorerNames[i]->dirty = true;
     }
 }
 
 void GameController::GoMainMenu()
 {
     mainMenu->SetActive(true);
+    auto resources = entity->GetService<ResourceController>();
+    music->Play(resources->Get<AudioClip>("assets/Audio/Music/menu.wav"), 0.5f);
 }
 
 void GameController::GoNewGame()
@@ -186,6 +201,8 @@ void GameController::GoExplorerMenu()
 
 void GameController::GoMapView()
 {
+    auto resources = entity->GetService<ResourceController>();
+    music->Play(resources->Get<AudioClip>("assets/Audio/Music/bgm.wav"), 0.5f);
     mainMenu->SetActive(false);
     explorerMenu->SetActive(false);
     bottomBar->SetActive(true);
@@ -195,6 +212,9 @@ void GameController::GoMapView()
 
 void GameController::HireExplorer(Explorer* e)
 {
+    auto resources = entity->GetService<ResourceController>();
+    footsteps->Play(resources->Get<AudioClip>(Utilities::Format("assets/Audio/Wilhelm/Screams/Shock_Scream-00{0}.wav", rng->Int(1, 6))));
+
     GoMapView();
 
     mapView->GenerateMap();

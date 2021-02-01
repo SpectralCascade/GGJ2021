@@ -60,6 +60,8 @@ void MapView::GenerateMap()
 
             zones[i][j] = cell->GetEntity()->CreateChild();
 
+            Log.Info("Creating terrain {0} {1}!!", i, j);
+
             // Randomly generate the terrain type
             Terrain* terrain = zones[i][j]->AddComponentOnce<Terrain>();
             float terrainChance = gc->rng->Float();
@@ -167,24 +169,24 @@ void MapView::SpawnExplorer(Explorer* explorer)
     hiredExplorer->face = spawned->AddComponentOnce<Texture>();
     hiredExplorer->face->imgPath = hiredExplorer->facePath;
     hiredExplorer->face->OnLoadFinish();
-    hiredExplorer->face->width = 64;
-    hiredExplorer->face->height = 64;
+
+    auto hair = hiredExplorer->GetEntity()->CreateChild();
+    hair->AddComponentOnce<Transform>();
+    hiredExplorer->hair = hair->AddComponentOnce<Texture>();
+    hiredExplorer->hair->imgPath = hiredExplorer->hairPath;
+    hiredExplorer->hair->OnLoadFinish();
 
     auto hat = hiredExplorer->GetEntity()->CreateChild();
     hat->AddComponentOnce<Transform>();
     hiredExplorer->hat = hat->AddComponentOnce<Texture>();
     hiredExplorer->hat->imgPath = hiredExplorer->hatPath;
     hiredExplorer->hat->OnLoadFinish();
-    hiredExplorer->hat->width = 64;
-    hiredExplorer->hat->height = 64;
 
     auto stache = hiredExplorer->GetEntity()->CreateChild();
     stache->AddComponentOnce<Transform>();
     hiredExplorer->stache = stache->AddComponentOnce<Texture>();
     hiredExplorer->stache->imgPath = hiredExplorer->stachePath;
     hiredExplorer->stache->OnLoadFinish();
-    hiredExplorer->stache->width = 64;
-    hiredExplorer->stache->height = 64;
 
     hiredExplorer->resText = entity->FindAndGetComponent<Text>("Health");
     hiredExplorer->luckText = nullptr;
@@ -192,6 +194,14 @@ void MapView::SpawnExplorer(Explorer* explorer)
 
     // Update appearance
     hiredExplorer->UpdateAppearance();
+    hiredExplorer->stache->width = 64;
+    hiredExplorer->stache->height = 64;
+    hiredExplorer->hat->width = 64;
+    hiredExplorer->hat->height = 64;
+    hiredExplorer->hair->width = 64;
+    hiredExplorer->hair->height = 64;
+    hiredExplorer->face->width = 64;
+    hiredExplorer->face->height = 64;
     
     hiredExplorer->GetTransform()->SetWorldPosition(grid->GetCellElement(explorerZone[0], explorerZone[1])->GetTransform()->GetWorldPosition());
     hiredExplorer->GetEntity()->SetActive(true);

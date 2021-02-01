@@ -32,14 +32,14 @@ int main(int argc, char* argv[])
 #else // Open new scope such that we clean up objects in the correct order.
 {
     Config config;
-    config.windowTitle = "";
+    config.windowTitle = "Expedition Lost";
     for (int i = 1; i < argc; i++)
     {
         config.startScenes.push_back(argv[i]);
     }
     if (config.startScenes.empty())
     {
-        //config.startScenes.push_back("assets/scenes/MainMenu.json");
+        config.startScenes.push_back("assets/Scenes/Game.json");
     }
 
     // Minimum supported resolution for the prototype.

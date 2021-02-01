@@ -47,7 +47,7 @@ public:
     
     void OnLoadFinish();
 
-    void UpdateAppearance();
+    void UpdateAppearance(bool imageLoadFully = true);
 
     Texture* hat = nullptr;
     Texture* stache = nullptr;

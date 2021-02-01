@@ -9,6 +9,9 @@
         }],
             "GameController" : [{
             "enabled" : 1
+        }],
+            "LayoutSurface" : [{
+            "enabled" : 1
         }]
         }
     },
@@ -19,7 +22,7 @@
         "Components" : {
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1184,
+            "width" : 1096,
             "height" : 941,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/Sprites/blankcell.png",
@@ -44,7 +47,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 470.5)",
+            "position" : "(548, 470.5)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -69,14 +72,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 470.5)",
+            "position" : "(541, 470.5)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1184,
+            "width" : 1082,
             "height" : 941,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -87,6 +90,9 @@
             "blending" : 1,
             "fitLayout" : 3,
             "stretchArea" : "(10, 10, 1, 1)"
+        }],
+            "InputGUI" : [{
+            "enabled" : 1
         }]
         }
     },
@@ -134,7 +140,7 @@
         }
     },
     "309" : {
-        "Name" : "BottomBar",
+        "Name" : "BottomBarMAIN",
         "Active" : 0,
         "Parent" : 0,
         "Components" : {
@@ -151,14 +157,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(569.5, 875.13)",
+            "position" : "(545.5, 875.13)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1139,
+            "width" : 1091,
             "height" : 131.74,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -201,26 +207,26 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 94.1)",
+            "position" : "(548, 94.1)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Text" : [{
             "enabled" : 1,
-            "text" : "Cartography",
+            "text" : "Expedition Lost",
             "applyMarkup" : 1,
-            "font_guid" : "assets/Orkney Regular.ttf",
+            "font_guid" : "assets/Obake.ttf",
             "layout" : {
                 "mainColor" : "(255, 230, 80, 255)",
                 "mainStyle" : 0,
-                "pointSize" : 72,
+                "pointSize" : 230,
                 "minPointSize" : 12,
                 "maxPointSize" : 0,
                 "dynamicFit" : 0,
                 "alignment" : 2,
                 "direction" : 0,
-                "lineWrap" : 1,
+                "lineWrap" : 0,
                 "ignoreWhitespace" : 1,
                 "wordBreak" : 0,
                 "kerning" : 1
@@ -251,14 +257,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 423.45)",
+            "position" : "(548, 423.45)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 355.2,
+            "width" : 328.8,
             "height" : 94.1,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -289,7 +295,7 @@
         }],
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 355.2,
+            "width" : 328.8,
             "height" : 94.1,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -307,7 +313,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 705.75)",
+            "position" : "(548, 705.75)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -319,6 +325,78 @@
             "origin" : "(0.5, 0.5)",
             "paddingMin" : "(0, 0)",
             "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
+    "2070" : {
+        "Name" : "Entity[2070]",
+        "Active" : 1,
+        "Parent" : 2,
+        "Components" : {
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Head_2.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(876.8, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0.6, 0.1)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
+    "2074" : {
+        "Name" : "Entity[2074]",
+        "Active" : 1,
+        "Parent" : 2,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0.1)",
+            "anchorMax" : "(0.4, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(219.2, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Head_6.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
         }]
         }
     },
@@ -346,7 +424,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1160.32, 922.18)",
+            "bounds" : "(1060.36, 922.18)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -357,7 +435,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(11.84, 9.41)",
+            "position" : "(10.82, 9.41)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -379,7 +457,7 @@
         "Components" : {
             "Texture" : [{
             "enabled" : 1,
-            "width" : 947.2,
+            "width" : 865.6,
             "height" : 639.88,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -393,7 +471,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 432.86)",
+            "position" : "(541, 432.86)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -423,14 +501,14 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(592, 837.49)",
+            "position" : "(541, 837.49)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
         }],
             "Texture" : [{
             "enabled" : 1,
-            "width" : 1136.64,
+            "width" : 1038.72,
             "height" : 169.38,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -484,7 +562,7 @@
         }],
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 330.31,
+            "width" : 316.39,
             "height" : 105.392,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -510,7 +588,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(962.455, 875.13)",
+            "position" : "(921.895, 875.13)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -541,7 +619,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1116.22, 92.218)",
+            "bounds" : "(1069.18, 92.218)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -552,7 +630,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(11.39, 829.021)",
+            "position" : "(10.91, 829.021)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -591,7 +669,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1116.22, -13.174)",
+            "bounds" : "(1069.18, -13.174)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -602,7 +680,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(11.39, 881.717)",
+            "position" : "(10.91, 881.717)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -641,7 +719,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(432.82, 39.522)",
+            "bounds" : "(414.58, 39.522)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -652,7 +730,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(353.09, 855.369)",
+            "position" : "(338.21, 855.369)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -696,7 +774,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(414.4, 399.925)",
+            "position" : "(383.6, 399.925)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -720,7 +798,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(355.2, 47.05)",
+            "bounds" : "(328.8, 47.05)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -746,7 +824,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(414.4, 682.225)",
+            "position" : "(383.6, 682.225)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -770,7 +848,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(355.2, 47.05)",
+            "bounds" : "(328.8, 47.05)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -778,6 +856,222 @@
             "outline" : 0,
             "hinting" : 0,
             "renderMode" : 0
+        }]
+        }
+    },
+    "2071" : {
+        "Name" : "Entity[2071]",
+        "Active" : 1,
+        "Parent" : 2070,
+        "Components" : {
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Accessory_2.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(876.8, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }]
+        }
+    },
+    "2072" : {
+        "Name" : "Entity[2072]",
+        "Active" : 1,
+        "Parent" : 2070,
+        "Components" : {
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Hair_1.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(876.8, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }]
+        }
+    },
+    "2073" : {
+        "Name" : "Entity[2073]",
+        "Active" : 1,
+        "Parent" : 2070,
+        "Components" : {
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 0,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(876.8, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }]
+        }
+    },
+    "2075" : {
+        "Name" : "Entity[2075]",
+        "Active" : 1,
+        "Parent" : 2074,
+        "Components" : {
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(219.2, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Accessory_4_1_4_5_6.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }]
+        }
+    },
+    "2248" : {
+        "Name" : "Entity[2248]",
+        "Active" : 1,
+        "Parent" : 2074,
+        "Components" : {
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(219.2, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
+        }],
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Hair_6.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }]
+        }
+    },
+    "2249" : {
+        "Name" : "Entity[2249]",
+        "Active" : 1,
+        "Parent" : 2074,
+        "Components" : {
+            "Texture" : [{
+            "enabled" : 1,
+            "width" : 438.4,
+            "height" : 438.4,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/Sprites/Characters/Hat_3.png",
+            "clip" : "(0, 0, 1024, 1024)",
+            "tiled" : 0,
+            "flip" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "blending" : 1,
+            "fitLayout" : 4,
+            "stretchArea" : "(0, 0, 0, 0)"
+        }],
+            "Transform" : [{
+            "enabled" : 1,
+            "position" : "(219.2, 517.55)",
+            "rotation" : 0,
+            "scale" : "(1, 1)",
+            "relative" : 0
+        }],
+            "BoxLayout" : [{
+            "enabled" : 1,
+            "anchorMin" : "(0, 0)",
+            "anchorMax" : "(1, 1)",
+            "origin" : "(0.5, 0.5)",
+            "paddingMin" : "(0, 0)",
+            "paddingMax" : "(0, 0)"
         }]
         }
     },
@@ -803,7 +1097,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(46.4128, 820.552)",
+            "position" : "(42.4144, 820.552)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -827,7 +1121,7 @@
                 "wordBreak" : 0,
                 "kerning" : 1
             },
-            "bounds" : "(1091.17, 33.876)",
+            "bounds" : "(997.171, 33.876)",
             "boxed" : 0,
             "boxPaddingWidth" : 4,
             "boxPaddingHeight" : 2,
@@ -1055,7 +1349,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(962.455, 854.052)",
+            "position" : "(921.895, 854.052)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1091,7 +1385,7 @@
         "Components" : {
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 272.89)",
+            "position" : "(251.024, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1126,7 +1420,7 @@
             "luck" : 0,
             "cost" : 0,
             "tier" : 0,
-            "hatPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "hatPath" : "assets/Sprites/Characters/Hat_1.png",
             "facePath" : "assets/Sprites/Characters/Head_1.png",
             "stachePath" : "assets/Sprites/Characters/Accessory_3.png",
             "energy" : 3
@@ -1146,7 +1440,7 @@
             "luck" : 0,
             "cost" : 0,
             "tier" : 1,
-            "hatPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "hatPath" : "assets/Sprites/Characters/Hat_1.png",
             "facePath" : "assets/Sprites/Characters/Head_1.png",
             "stachePath" : "assets/Sprites/Characters/Accessory_3.png",
             "energy" : 3
@@ -1175,7 +1469,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 272.89)",
+            "position" : "(536.672, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -1195,7 +1489,7 @@
             "luck" : 0,
             "cost" : 0,
             "tier" : 2,
-            "hatPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "hatPath" : "assets/Sprites/Characters/Hat_1.png",
             "facePath" : "assets/Sprites/Characters/Head_1.png",
             "stachePath" : "assets/Sprites/Characters/Accessory_3.png",
             "energy" : 3
@@ -1224,7 +1518,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 272.89)",
+            "position" : "(826.648, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3262,7 +3556,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 138.515)",
+            "position" : "(251.024, 138.515)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3281,7 +3575,7 @@
                 "dynamicFit" : 0,
                 "alignment" : 2,
                 "direction" : 0,
-                "lineWrap" : 1,
+                "lineWrap" : 0,
                 "ignoreWhitespace" : 1,
                 "wordBreak" : 0,
                 "kerning" : 1
@@ -3312,7 +3606,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 272.89)",
+            "position" : "(251.024, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3348,7 +3642,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 272.89)",
+            "position" : "(251.024, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3358,7 +3652,7 @@
             "width" : 191.964,
             "height" : 191.964,
             "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
             "clip" : "(0, 0, 1024, 1024)",
             "tiled" : 0,
             "flip" : 0,
@@ -3404,7 +3698,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 368.872)",
+            "position" : "(251.024, 368.872)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3434,7 +3728,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 426.461)",
+            "position" : "(251.024, 426.461)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3504,7 +3798,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 484.05)",
+            "position" : "(251.024, 484.05)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3526,7 +3820,7 @@
         "Components" : {
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 250.061,
+            "width" : 228.518,
             "height" : 124.777,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -3544,7 +3838,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 661.617)",
+            "position" : "(251.024, 661.617)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3577,7 +3871,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 541.64)",
+            "position" : "(251.024, 541.64)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3622,7 +3916,7 @@
             "width" : 191.964,
             "height" : 191.964,
             "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
             "clip" : "(0, 0, 1024, 1024)",
             "tiled" : 0,
             "flip" : 0,
@@ -3633,7 +3927,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(274.688, 272.89)",
+            "position" : "(251.024, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3663,7 +3957,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 138.515)",
+            "position" : "(536.672, 138.515)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3682,7 +3976,7 @@
                 "dynamicFit" : 0,
                 "alignment" : 2,
                 "direction" : 0,
-                "lineWrap" : 1,
+                "lineWrap" : 0,
                 "ignoreWhitespace" : 1,
                 "wordBreak" : 0,
                 "kerning" : 1
@@ -3713,7 +4007,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 272.89)",
+            "position" : "(536.672, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3749,7 +4043,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 272.89)",
+            "position" : "(536.672, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3759,7 +4053,7 @@
             "width" : 191.964,
             "height" : 191.964,
             "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
             "clip" : "(0, 0, 1024, 1024)",
             "tiled" : 0,
             "flip" : 0,
@@ -3805,7 +4099,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 368.872)",
+            "position" : "(536.672, 368.872)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3835,7 +4129,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 426.461)",
+            "position" : "(536.672, 426.461)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3905,7 +4199,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 484.05)",
+            "position" : "(536.672, 484.05)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3927,7 +4221,7 @@
         "Components" : {
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 250.061,
+            "width" : 228.518,
             "height" : 124.777,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -3945,7 +4239,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 661.617)",
+            "position" : "(536.672, 661.617)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -3978,7 +4272,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 541.64)",
+            "position" : "(536.672, 541.64)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4023,7 +4317,7 @@
             "width" : 191.964,
             "height" : 191.964,
             "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
             "clip" : "(0, 0, 1024, 1024)",
             "tiled" : 0,
             "flip" : 0,
@@ -4034,7 +4328,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(587.264, 272.89)",
+            "position" : "(536.672, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4064,7 +4358,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 138.515)",
+            "position" : "(826.648, 138.515)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4083,7 +4377,7 @@
                 "dynamicFit" : 0,
                 "alignment" : 2,
                 "direction" : 0,
-                "lineWrap" : 1,
+                "lineWrap" : 0,
                 "ignoreWhitespace" : 1,
                 "wordBreak" : 0,
                 "kerning" : 1
@@ -4114,7 +4408,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 272.89)",
+            "position" : "(826.648, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4150,7 +4444,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 272.89)",
+            "position" : "(826.648, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4160,7 +4454,7 @@
             "width" : 191.964,
             "height" : 191.964,
             "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
             "clip" : "(0, 0, 1024, 1024)",
             "tiled" : 0,
             "flip" : 0,
@@ -4206,7 +4500,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 368.872)",
+            "position" : "(826.648, 368.872)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4236,7 +4530,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 426.461)",
+            "position" : "(826.648, 426.461)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4306,7 +4600,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 484.05)",
+            "position" : "(826.648, 484.05)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4328,7 +4622,7 @@
         "Components" : {
             "StateSprite" : [{
             "enabled" : 1,
-            "width" : 257.638,
+            "width" : 235.443,
             "height" : 124.777,
             "origin" : "(0.5, 0.5)",
             "imgPath" : "assets/UI/Buttons/button.png",
@@ -4346,7 +4640,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 661.617)",
+            "position" : "(826.648, 661.617)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4379,7 +4673,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 541.64)",
+            "position" : "(826.648, 541.64)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0
@@ -4424,7 +4718,7 @@
             "width" : 191.964,
             "height" : 191.964,
             "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/Sprites/Characters/Bowler_Hat.png",
+            "imgPath" : "assets/Sprites/Characters/Hat_1.png",
             "clip" : "(0, 0, 1024, 1024)",
             "tiled" : 0,
             "flip" : 0,
@@ -4435,7 +4729,7 @@
         }],
             "Transform" : [{
             "enabled" : 1,
-            "position" : "(904.576, 272.89)",
+            "position" : "(826.648, 272.89)",
             "rotation" : 0,
             "scale" : "(1, 1)",
             "relative" : 0

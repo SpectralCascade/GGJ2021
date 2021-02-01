@@ -19,7 +19,7 @@ void Explorer::OnLoadFinish()
 
 }
 
-void Explorer::UpdateAppearance()
+void Explorer::UpdateAppearance(bool imageLoadFully)
 {
     // Update character appearance
     auto resources = entity->GetService<ResourceController>();
@@ -27,22 +27,22 @@ void Explorer::UpdateAppearance()
 
     if (face != nullptr)
     {
-        face->SetSource(resources->Get<Image>(facePath, *renderer));
+        face->SetSource(resources->Get<Image>(facePath, *renderer), imageLoadFully);
     }
 
     if (hat != nullptr)
     {
-        hat->SetSource(resources->Get<Image>(hatPath, *renderer));
+        hat->SetSource(resources->Get<Image>(hatPath, *renderer), imageLoadFully);
     }
 
     if (stache != nullptr)
     {
-        stache->SetSource(resources->Get<Image>(stachePath, *renderer));
+        stache->SetSource(resources->Get<Image>(stachePath, *renderer), imageLoadFully);
     }
 
     if (hair != nullptr)
     {
-        hair->SetSource(resources->Get<Image>(hairPath, *renderer));
+        hair->SetSource(resources->Get<Image>(hairPath, *renderer), imageLoadFully);
     }
 
     // Update stats text

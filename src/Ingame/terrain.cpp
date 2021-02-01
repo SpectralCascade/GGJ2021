@@ -12,11 +12,11 @@ void Terrain::Init(GameController* gc)
     game = gc;
 
     tex = entity->AddComponentOnce<Texture>();
-    //tex->fitLayout = 4;
-    tex->OnLoadFinish();
-
     // Blank out tiles that haven't been explored
-    tex->SetSource(resources->Get<Image>("assets/Sprites/blankcell.png", *renderer));
+    tex->imgPath = "assets/Sprites/blankcell.png";
+    tex->OnLoadFinish();
+    //tex->fitLayout = 4;
+
     tex->SetAlphaMod(100);
     discovered = false;
 

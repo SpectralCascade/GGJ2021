@@ -69,6 +69,7 @@ public:
 
     Explorer* menuExplorers[3];
     Text* hireCosts[3];
+    Text* explorerNames[3];
 
     Button* exploreButton = nullptr;
 
@@ -76,6 +77,7 @@ public:
     AudioBus* master = nullptr;
 
     AudioPlayer* footsteps = nullptr;
+    AudioPlayer* music = nullptr;
 
     GameEvent* toEvaluate = nullptr;
 
